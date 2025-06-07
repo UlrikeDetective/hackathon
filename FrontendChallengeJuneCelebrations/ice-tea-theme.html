@@ -39,42 +39,90 @@
     </section>
     
     <section class="grid-container">
-      <!-- 6 rows x 5 columns grid, 30 images -->
-      <!-- Images will be inserted here -->
-      <div class="grid-item"><span class="day-label">Day 1</span><img src="IceTeapics/IceTea-1.png" alt="Iced Tea Day 1"></div>
-      <div class="grid-item"><span class="day-label">Day 2</span><img src="IceTeapics/IceTea-3.png" alt="Iced Tea Day 2"></div>
-      <div class="grid-item"><span class="day-label">Day 3</span><img src="IceTeapics/IceTea-4.png" alt="Iced Tea Day 3"></div>
-      <div class="grid-item"><span class="day-label">Day 4</span><img src="IceTeapics/IceTea-5.png" alt="Iced Tea Day 4"></div>
-      <div class="grid-item"><span class="day-label">Day 5</span><img src="IceTeapics/IceTea-6.png" alt="Iced Tea Day 5"></div>
-      <div class="grid-item"><span class="day-label">Day 6</span><img src="IceTeapics/IceTea-7.png" alt="Iced Tea Day 6"></div>
-      <div class="grid-item"><span class="day-label">Day 7</span><img src="IceTeapics/IceTea-8.png" alt="Iced Tea Day 7"></div>
-      <div class="grid-item"><span class="day-label">Day 8</span><img src="IceTeapics/IceTea-9.png" alt="Iced Tea Day 8"></div>
-      <div class="grid-item"><span class="day-label">Day 9</span><img src="IceTeapics/IceTea-10.png" alt="Iced Tea Day 9"></div>
-      <div class="grid-item"><span class="day-label">Day 10</span><img src="IceTeapics/IceTea-11.png" alt="Iced Tea Day 10"></div>
-      <div class="grid-item"><span class="day-label">Day 11</span><img src="IceTeapics/IceTea-12.png" alt="Iced Tea Day 11"></div>
-      <div class="grid-item"><span class="day-label">Day 12</span><img src="IceTeapics/IceTea-13.png" alt="Iced Tea Day 12"></div>
-      <div class="grid-item"><span class="day-label">Day 13</span><img src="IceTeapics/IceTea-14.png" alt="Iced Tea Day 13"></div>
-      <div class="grid-item"><span class="day-label">Day 14</span><img src="IceTeapics/IceTea-15.png" alt="Iced Tea Day 14"></div>
-      <div class="grid-item"><span class="day-label">Day 15</span><img src="IceTeapics/IchTea02-3.png" alt="Iced Tea Day 15"></div>
-      <div class="grid-item"><span class="day-label">Day 16</span><img src="IceTeapics/IchTea02-5.png" alt="Iced Tea Day 16"></div>
-      <div class="grid-item"><span class="day-label">Day 17</span><img src="IceTeapics/IchTea02-8.png" alt="Iced Tea Day 17"></div>
-      <div class="grid-item"><span class="day-label">Day 18</span><img src="IceTeapics/IchTea02-9.png" alt="Iced Tea Day 18"></div>
-      <div class="grid-item"><span class="day-label">Day 19</span><img src="IceTeapics/IchTea02-10.png" alt="Iced Tea Day 19"></div>
-      <div class="grid-item"><span class="day-label">Day 20</span><img src="IceTeapics/IchTea02-11.png" alt="Iced Tea Day 20"></div>
-      <div class="grid-item"><span class="day-label">Day 21</span><img src="IceTeapics/IchTea02-13.png" alt="Iced Tea Day 21"></div>
-      <div class="grid-item"><span class="day-label">Day 22</span><img src="IceTeapics/IchTea02-14.png" alt="Iced Tea Day 22"></div>
-      <div class="grid-item"><span class="day-label">Day 23</span><img src="IceTeapics/IchTea02-15.png" alt="Iced Tea Day 23"></div>
-      <div class="grid-item"><span class="day-label">Day 24</span><img src="IceTeapics/IchTea02-16.png" alt="Iced Tea Day 24"></div>
-      <div class="grid-item"><span class="day-label">Day 25</span><img src="IceTeapics/IchTea02-18.png" alt="Iced Tea Day 25"></div>
-      <div class="grid-item"><span class="day-label">Day 26</span><img src="IceTeapics/IchTea02-19.png" alt="Iced Tea Day 26"></div>
-      <div class="grid-item"><span class="day-label">Day 27</span><img src="IceTeapics/IchTea02-21.png" alt="Iced Tea Day 27"></div>
-      <div class="grid-item"><span class="day-label">Day 28</span><img src="IceTeapics/IchTea02-22.png" alt="Iced Tea Day 28"></div>
-      <div class="grid-item"><span class="day-label">Day 29</span><img src="IceTeapics/IchTea02-23.png" alt="Iced Tea Day 29"></div>
-      <div class="grid-item"><span class="day-label">Day 30</span><img src="IceTeapics/IchTea02-24.png" alt="Iced Tea Day 30"></div>
+      <!-- JavaScript will dynamically insert the grid items here -->
     </section>
   </main>
   <footer>
     <p style="text-align:center;color:var(--main-body-text);font-family:'Lato',sans-serif;font-size:1rem;margin:2rem 0 1rem 0;">&copy; 2025 June Celebrations &mdash; Enjoy your iced tea adventure!<br>Created by Ulrike Herold</p>
   </footer>
+
+  <script>
+      // Iced tea names and ingredients for City Vibes theme
+      const teas = [
+        { name: "Berliner Weisse Brew", ingredients: "Green tea, raspberry puree, a hint of white balsamic vinegar.", img: "IceTeapics/IceTea-1.png" },
+        { name: "Spree Smoke & Spice", ingredients: "Lapsang Souchong tea, smoked paprika, black currant.", img: "IceTeapics/IceTea-3.png" },
+        { name: "Tiergarten Herbal Chill", ingredients: "Peppermint, spearmint, lemon verbena, a touch of apple.", img: "IceTeapics/IceTea-4.png" },
+        { name: "Nordic Berry Bliss", ingredients: "Black tea, lingonberries, cranberries, birch sap essence.", img: "IceTeapics/IceTea-5.png" },
+        { name: "Arctic Sea Breeze", ingredients: "White tea, sea buckthorn berries, a whisper of dill.", img: "IceTeapics/IceTea-6.png" },
+        { name: "Midnight Sun Mint", ingredients: "Green tea, cloudberry, fresh mint leaves.", img: "IceTeapics/IceTea-7.png" },
+        { name: "Matcha Zen Garden", ingredients: "Ceremonial matcha, yuzu juice, a subtle sweetness.", img: "IceTeapics/IceTea-8.png" },
+        { name: "Sakura Blossom Brew", ingredients: "Green tea, cherry blossom essence, pickled cherry leaf.", img: "IceTeapics/IceTea-9.png" },
+        { name: "Hojicha Roasted Delight", ingredients: "Roasted Hojicha tea, toasted rice, a hint of sesame.", img: "IceTeapics/IceTea-10.png" },
+        { name: "Aloha Pineapple Ginger", ingredients: "Black tea, fresh pineapple, ginger root, lime.", img: "IceTeapics/IceTea-11.png" },
+        { name: "Maui Mango Tango", ingredients: "Green tea, ripe mango, passionfruit, a touch of coconut water.", img: "IceTeapics/IceTea-12.png" },
+        { name: "Kona Coffee Bloom", ingredients: "Cold brew coffee-infused black tea, macadamia nut, a hint of vanilla.", img: "IceTeapics/IceTea-13.png" },
+        { name: "Champs-Élysées Rose", ingredients: "Black tea, rose petals, lychee, a touch of crème de cassis.", img: "IceTeapics/IceTea-14.png" },
+        { name: "Lavender Riviera", ingredients: "White tea, lavender buds, apricot essence, a touch of honey.", img: "IceTeapics/IceTea-15.png" },
+        { name: "Jardin des Tuileries Mint", ingredients: "Green tea, fresh spearmint, cucumber, elderflower.", img: "IceTeapics/IchTea02-3.png" },
+        { name: "Golden Gate Citrus", ingredients: "Oolong tea, Meyer lemon, blood orange, a hint of rosemary.", img: "IceTeapics/IchTea02-5.png" },
+        { name: "Bay Area Berry Buzz", ingredients: "Black tea, boysenberries, loganberries, a dash of sparkling water.", img: "IceTeapics/IchTea02-8.png" },
+        { name: "Pacific Fog Herbal", ingredients: "Chamomile, California poppy, lemon verbena, a touch of agave.", img: "IceTeapics/IchTea02-9.png" },
+        { name: "Rooibos Sunset Spice", ingredients: "Rooibos tea, cinnamon, star anise, dried orange peel.", img: "IceTeapics/IchTea02-10.png" },
+        { name: "Fynbos Floral Infusion", ingredients: "Honeybush tea, local fynbos botanicals (e.g., buchu, rooibos sprigs), a touch of wild honey.", img: "IceTeapics/IchTea02-11.png" },
+        { name: "Table Mountain Green", ingredients: "Green tea, indigenous Cape gooseberry, a hint of ginger.", img: "IceTeapics/IchTea02-13.png" },
+        { name: "Agua Fresca Hibiscus", ingredients: "Hibiscus tea, fresh lime juice, a touch of agave.", img: "IceTeapics/IchTea02-14.png" },
+        { name: "Chile Mango Tango", ingredients: "Black tea, ripe mango, a whisper of chili powder, lime.", img: "IceTeapics/IchTea02-15.png" },
+        { name: "Horchata Cold Brew", ingredients: "Rice milk-infused black tea, cinnamon, vanilla.", img: "IceTeapics/IchTea02-16.png" },
+        { name: "Earl Grey's Secret Garden", ingredients: "Earl Grey tea, cucumber ribbons, a touch of elderflower.", img: "IceTeapics/IchTea02-18.png" },
+        { name: "Pimm's Picnic Punch", ingredients: "Black tea, strawberry, orange, mint, a hint of gin botanical essence (non-alcoholic).", img: "IceTeapics/IchTea02-19.png" },
+        { name: "Thames Berry & Thyme", ingredients: "Black tea, blackcurrant, redcurrant, fresh thyme.", img: "IceTeapics/IchTea02-21.png" },
+        { name: "Citrus Grove Fiesta", ingredients: "Green tea, Valencia oranges, lemons, a hint of saffron.", img: "IceTeapics/IchTea02-22.png" },
+        { name: "Sangria Sunset Brew", ingredients: "Rooibos tea, mixed red fruits, orange slices, a touch of cinnamon.", img: "IceTeapics/IchTea02-23.png" },
+        { name: "Herb Garden Gracia", ingredients: "White tea, fresh rosemary, thyme, a squeeze of lemon.", img: "IceTeapics/IchTea02-24.png" }
+      ];
+
+      // Replace grid content dynamically
+      document.addEventListener('DOMContentLoaded', function() {
+        const grid = document.querySelector('.grid-container');
+        grid.innerHTML = '';
+        teas.forEach((tea, i) => {
+          const cell = document.createElement('div');
+          cell.className = 'grid-item';
+          cell.setAttribute('data-state', 'name');
+          cell.setAttribute('data-index', i);
+          cell.style.cursor = 'pointer';
+          cell.innerHTML = `<span class="day-label">Day ${i+1}</span><div class="tea-content">${tea.name}</div>`;
+
+          // Hover: show name
+          cell.addEventListener('mouseenter', function() {
+            if (cell.getAttribute('data-state') === 'name') {
+              cell.querySelector('.tea-content').textContent = tea.name;
+            }
+          });
+          cell.addEventListener('mouseleave', function() {
+            if (cell.getAttribute('data-state') === 'name') {
+              cell.querySelector('.tea-content').textContent = tea.name;
+            }
+          });
+
+          // Click: cycle state (name -> ingredients -> image -> name ...)
+          cell.addEventListener('click', function() {
+            let state = cell.getAttribute('data-state');
+            if (state === 'name') {
+              cell.querySelector('.tea-content').textContent = tea.ingredients;
+              cell.setAttribute('data-state', 'ingredients');
+            } else if (state === 'ingredients') {
+              cell.querySelector('.tea-content').innerHTML = `<img src="${tea.img}" alt="${tea.name}" style="max-width:100%;border-radius:0.7rem;box-shadow:0 2px 8px rgba(90,75,58,0.10);background:#fff;">`;
+              cell.setAttribute('data-state', 'image');
+            } else {
+              cell.querySelector('.tea-content').textContent = tea.name;
+              cell.setAttribute('data-state', 'name');
+            }
+          });
+
+          grid.appendChild(cell);
+        });
+      });
+    </script>
 </body>
 </html>
