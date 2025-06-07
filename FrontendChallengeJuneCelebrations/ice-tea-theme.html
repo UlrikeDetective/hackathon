@@ -105,15 +105,16 @@
             }
           });
 
-          // Click: cycle state (name -> ingredients -> image -> name ...)
+          // Click: cycle state (name -> ingredients -> css art -> name ...)
           cell.addEventListener('click', function() {
             let state = cell.getAttribute('data-state');
             if (state === 'name') {
               cell.querySelector('.tea-content').textContent = tea.ingredients;
               cell.setAttribute('data-state', 'ingredients');
             } else if (state === 'ingredients') {
-              cell.querySelector('.tea-content').innerHTML = `<img src="${tea.img}" alt="${tea.name}" style="max-width:100%;border-radius:0.7rem;box-shadow:0 2px 8px rgba(90,75,58,0.10);background:#fff;">`;
-              cell.setAttribute('data-state', 'image');
+              // Show CSS iced tea art instead of image
+              cell.querySelector('.tea-content').innerHTML = `<div class="css-iced-tea tea-${i+1}"></div>`;
+              cell.setAttribute('data-state', 'cssart');
             } else {
               cell.querySelector('.tea-content').textContent = tea.name;
               cell.setAttribute('data-state', 'name');
