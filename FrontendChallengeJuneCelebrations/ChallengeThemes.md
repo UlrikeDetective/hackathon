@@ -202,8 +202,63 @@ Use for: Footer text, important headings, subtle shadows, or as a strong accent 
 Why it works: Lora is a well-balanced contemporary serif typeface with roots in calligraphy. It has a beautiful, elegant flow that feels refined yet inviting. Its moderate contrast makes it highly readable, and it projects a sense of calm and classic beauty, perfectly aligning with the natural and serene feel of a good iced tea. It's fantastic for conveying a sense of quality and comfort.
 Use it for: Headings, subheadings, key quotes, and short, impactful statements that need to draw the eye with a touch of sophistication.
 
+```html
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+```
+
+```css
+
+.lora-<uniquifier> {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+```
 ### Lato (Sans-Serif for Body Text)
 
 Why it works: Lato is a warm, semi-rounded sans-serif typeface. It's incredibly versatile and highly legible, making it perfect for body text where clarity and comfort are paramount. The semi-rounded details give it a friendly and approachable feel without being overly casual, harmonizing beautifully with Lora's elegance. It's clean, modern, and provides excellent readability for longer paragraphs about your teas or the "perfect iced tea" recipe.
 Use it for: Body paragraphs, product descriptions, navigation links, and any informational text.
+
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+```
+
+```css
+.lato-thin {
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.lato-light {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.lato-regular {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.lato-bold {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.lato-black {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+```
 ---
