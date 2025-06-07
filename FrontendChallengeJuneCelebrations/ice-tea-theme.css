@@ -225,7 +225,125 @@ p {
   position: absolute; left: 65%; bottom: 60%; width: 14%; height: 14%; background: #ffe066; border-radius: 0 0 70% 70%; z-index: 5; border: 2px solid #fff;
 }
 
-/* ...repeat for teas 11-30 with unique details... */
+/* Tea 11: Maui Mango Tango - orange, mango chunk */
+.css-iced-tea.tea-11::after { --tea-color: #ffd580; }
+.css-iced-tea.tea-11 .mango {
+  position: absolute; left: 68%; bottom: 62%; width: 14%; height: 10%; background: #ffb347; border-radius: 40% 60% 60% 40%/60% 40% 60% 40%; z-index: 5;
+}
+
+/* Tea 12: Kona Coffee Bloom - coffee brown, coffee bean */
+.css-iced-tea.tea-12::after { --tea-color: #bfae9e; }
+.css-iced-tea.tea-12 .bean {
+  position: absolute; left: 60%; bottom: 60%; width: 10%; height: 16%; background: #6b4f2a; border-radius: 50% 50% 50% 50%/60% 40% 60% 40%; z-index: 5;
+}
+
+/* Tea 13: Champs-Élysées Rose - rose pink, rose petal */
+.css-iced-tea.tea-13::after { --tea-color: #f7c6d9; }
+.css-iced-tea.tea-13 .petal {
+  position: absolute; left: 65%; bottom: 60%; width: 14%; height: 10%; background: #f7a6c6; border-radius: 60% 40% 60% 40%/60% 40% 60% 40%; z-index: 5;
+}
+
+/* Tea 14: Lavender Riviera - lavender, lavender sprig */
+.css-iced-tea.tea-14::after { --tea-color: #e6d3f7; }
+.css-iced-tea.tea-14 .lavender {
+  position: absolute; left: 60%; bottom: 65%; width: 6%; height: 22%; background: #b39ddb; border-radius: 40%; z-index: 5;
+}
+
+/* Tea 15: Jardin des Tuileries Mint - green, cucumber slice */
+.css-iced-tea.tea-15::after { --tea-color: #b3c6a2; }
+.css-iced-tea.tea-15 .cucumber {
+  position: absolute; left: 70%; bottom: 60%; width: 14%; height: 14%; background: #d0f5c7; border-radius: 50%; border: 2px solid #b3c6a2; z-index: 5;
+}
+
+/* Tea 16: Golden Gate Citrus - orange, orange wedge */
+.css-iced-tea.tea-16::after { --tea-color: #ffb347; }
+.css-iced-tea.tea-16 .orange {
+  position: absolute; left: 65%; bottom: 60%; width: 14%; height: 14%; background: #ff9800; border-radius: 0 0 70% 70%; z-index: 5; border: 2px solid #fff;
+}
+
+/* Tea 17: Bay Area Berry Buzz - berry purple, berry dot */
+.css-iced-tea.tea-17::after { --tea-color: #c06cc6; }
+.css-iced-tea.tea-17 .berry {
+  position: absolute; left: 60%; bottom: 60%; width: 10%; height: 10%; background: #a259c6; border-radius: 50%; z-index: 5;
+}
+
+/* Tea 18: Pacific Fog Herbal - pale blue, fog swirl */
+.css-iced-tea.tea-18::after { --tea-color: #dbeafe; }
+.css-iced-tea.tea-18 .fog {
+  position: absolute; left: 60%; bottom: 65%; width: 18%; height: 8%; background: #b3c6e6; border-radius: 50%; z-index: 5; opacity: 0.7;
+}
+
+/* Tea 19: Rooibos Sunset Spice - red, spice dot */
+.css-iced-tea.tea-19::after { --tea-color: #c97a63; }
+.css-iced-tea.tea-19 .spice {
+  position: absolute; left: 65%; bottom: 60%; width: 8%; height: 8%; background: #a2592a; border-radius: 50%; z-index: 5;
+}
+
+/* Tea 20: Fynbos Floral Infusion - floral yellow, flower */
+.css-iced-tea.tea-20::after { --tea-color: #ffe066; }
+.css-iced-tea.tea-20 .flower {
+  position: absolute; left: 60%; bottom: 60%; width: 14%; height: 14%; background: #fffbe6; border-radius: 50%; z-index: 5; box-shadow: 0 0 0 2px #ffe066;
+}
+
+/* Tea 21: Table Mountain Green - green, gooseberry */
+.css-iced-tea.tea-21::after { --tea-color: #b3c6a2; }
+.css-iced-tea.tea-21 .gooseberry {
+  position: absolute; left: 65%; bottom: 60%; width: 10%; height: 10%; background: #c6e6b3; border-radius: 50%; z-index: 5;
+}
+
+/* Tea 22: Agua Fresca Hibiscus - hibiscus pink, hibiscus flower */
+.css-iced-tea.tea-22::after { --tea-color: #f7a6c6; }
+.css-iced-tea.tea-22 .hibiscus {
+  position: absolute; left: 60%; bottom: 60%; width: 16%; height: 16%; background: #f7c6d9; border-radius: 50%; z-index: 5; box-shadow: 0 0 0 2px #f7a6c6;
+}
+
+/* Tea 23: Chile Mango Tango - orange, chili */
+.css-iced-tea.tea-23::after { --tea-color: #ffb347; }
+.css-iced-tea.tea-23 .chili {
+  position: absolute; left: 70%; bottom: 65%; width: 8%; height: 18%; background: #e57373; border-radius: 40% 60% 60% 40%/60% 40% 60% 40%; z-index: 5; transform: rotate(-20deg);
+}
+
+/* Tea 24: Horchata Cold Brew - creamy, cinnamon stick */
+.css-iced-tea.tea-24::after { --tea-color: #f7e6c6; }
+.css-iced-tea.tea-24 .cinnamon {
+  position: absolute; left: 40%; bottom: 60%; width: 6%; height: 30%; background: #bfae9e; border-radius: 0.2em; z-index: 5; transform: rotate(-10deg);
+}
+
+/* Tea 25: Earl Grey's Secret Garden - grey, cucumber */
+.css-iced-tea.tea-25::after { --tea-color: #bfc6c6; }
+.css-iced-tea.tea-25 .cucumber {
+  position: absolute; left: 70%; bottom: 60%; width: 14%; height: 14%; background: #d0f5c7; border-radius: 50%; border: 2px solid #b3c6a2; z-index: 5;
+}
+
+/* Tea 26: Pimm's Picnic Punch - red, orange slice */
+.css-iced-tea.tea-26::after { --tea-color: #ffb347; }
+.css-iced-tea.tea-26 .orange {
+  position: absolute; left: 65%; bottom: 60%; width: 14%; height: 14%; background: #ff9800; border-radius: 0 0 70% 70%; z-index: 5; border: 2px solid #fff;
+}
+
+/* Tea 27: Thames Berry & Thyme - purple, thyme sprig */
+.css-iced-tea.tea-27::after { --tea-color: #c06cc6; }
+.css-iced-tea.tea-27 .thyme {
+  position: absolute; left: 60%; bottom: 65%; width: 6%; height: 22%; background: #6b8e6a; border-radius: 40%; z-index: 5;
+}
+
+/* Tea 28: Citrus Grove Fiesta - yellow, lemon slice */
+.css-iced-tea.tea-28::after { --tea-color: #ffe066; }
+.css-iced-tea.tea-28 .lemon {
+  position: absolute; left: 70%; bottom: 60%; width: 16%; height: 16%; background: #ffe066; border-radius: 50%; border: 2px solid #fff; z-index: 5;
+}
+
+/* Tea 29: Sangria Sunset Brew - red, fruit dot */
+.css-iced-tea.tea-29::after { --tea-color: #c97a63; }
+.css-iced-tea.tea-29 .fruit {
+  position: absolute; left: 65%; bottom: 55%; width: 18%; height: 18%; background: #e57373; border-radius: 50%; border: 2px solid #fff; z-index: 5;
+}
+
+/* Tea 30: Herb Garden Gracia - green, herb sprig */
+.css-iced-tea.tea-30::after { --tea-color: #b3c6a2; }
+.css-iced-tea.tea-30 .herb {
+  position: absolute; left: 60%; bottom: 65%; width: 10%; height: 22%; background: #6b8e6a; border-radius: 40%; z-index: 5;
+}
 
 @media (max-width: 900px) {
   .grid-container {
