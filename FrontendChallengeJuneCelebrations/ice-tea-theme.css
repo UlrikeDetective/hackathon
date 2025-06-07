@@ -58,6 +58,15 @@ p {
   text-align: start;
 }
 
+.tea-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -105,7 +114,7 @@ p {
   border-radius: 0.7rem;
   margin-bottom: 0;
   box-shadow: 0 2px 8px rgba(90, 75, 58, 0.10);
-  background: #fff;
+  background: var(--secondary-accent);
 }
 
 .grid-item .day-label {
