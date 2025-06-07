@@ -91,8 +91,11 @@ You are **not required** to license your code, but we strongly recommend that yo
 ---
 
 ## Questions
-We're very excited to see your June celebrations! If you have questions, ask them below or on the [challenge page](https://dev.to/challenges/frontend-2025-06-04).
+How do I embed my project directly into my DEV post?
+Our editor supports many types of embeds, including: Stackbliz, Glitch, Github, etc. You can typically use the {% embed https://... %} syntax directly in the post. Click here for more information on our markdown support.
+
+For CodePen, you will need to use this syntax: {% codepen http://... %}
+For CodeSandbox, you will need to use this syntax: {% codesandbox http://... %}
 
 ---
 
-**Thanks for participating!**

@@ -169,4 +169,41 @@
 
 ---
 
-*Enjoy your June celebrations with a new iced tea every day!*
+---
+## Color theme
+### Iced Tea Homepage Color Theme: "Leafy Serenity"
+This palette blends earthy tranquility with refreshing vibrancy, perfect for a homepage that feels both natural and inviting.
+
+- ** Primary Accent (Creamy Freshness): #F8F5E9 ** (A soft, almost translucent cream, like the lightest part of a fresh tea bud or the foamy top of a cold brew.)
+Use for: Backgrounds, subtle highlights, text that needs to feel light and airy.
+
+- ** Secondary Accent (Gentle Green): #B3C6A2 ** (A muted, calming green, reminiscent of young, unoxidized tea leaves.)
+
+Use for: Buttons, active links, section dividers, small graphic elements.
+
+- ** Main Body Text (Steeped Green): #6B8E6A ** (A deeper, more saturated green, like a perfectly steeped cup of green tea.)
+
+Use for: Main body text, subheadings, prominent graphic features.
+
+- ** Highlight/Call to Action (Warm Brew): #C8A88B ** (A soft, light brown, like a delicately brewed oolong or black tea.)
+
+Use for: Call-to-action buttons, key product highlights, interactive elements that need to stand out gently.
+
+- ** Dark Contrast (Rich Brew): #5A4B3A ** (A deep, comforting brown, evoking the rich tones of a strong black tea or rooibos.)
+
+Use for: Footer text, important headings, subtle shadows, or as a strong accent color for specific sections.
+---
+
+---
+## Fonts theme
+
+### Lora (Serif for Headings/Key Text)
+
+Why it works: Lora is a well-balanced contemporary serif typeface with roots in calligraphy. It has a beautiful, elegant flow that feels refined yet inviting. Its moderate contrast makes it highly readable, and it projects a sense of calm and classic beauty, perfectly aligning with the natural and serene feel of a good iced tea. It's fantastic for conveying a sense of quality and comfort.
+Use it for: Headings, subheadings, key quotes, and short, impactful statements that need to draw the eye with a touch of sophistication.
+
+### Lato (Sans-Serif for Body Text)
+
+Why it works: Lato is a warm, semi-rounded sans-serif typeface. It's incredibly versatile and highly legible, making it perfect for body text where clarity and comfort are paramount. The semi-rounded details give it a friendly and approachable feel without being overly casual, harmonizing beautifully with Lora's elegance. It's clean, modern, and provides excellent readability for longer paragraphs about your teas or the "perfect iced tea" recipe.
+Use it for: Body paragraphs, product descriptions, navigation links, and any informational text.
+---
