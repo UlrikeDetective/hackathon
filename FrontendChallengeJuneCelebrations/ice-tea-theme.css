@@ -81,20 +81,29 @@ p {
   justify-content: center;
   padding: 0.5rem;
   transition: transform 0.15s, box-shadow 0.15s;
+  aspect-ratio: 1 / 1;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
-.grid-item:hover {
-  transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 8px 24px rgba(90, 75, 58, 0.15);
-  background: var(--highlight-cta);
+.grid-item .tea-content,
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .grid-item img {
-  width: 100%;
-  max-width: 140px;
-  height: auto;
+  max-width: 100%;
+  max-height: 100%;
   border-radius: 0.7rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0;
   box-shadow: 0 2px 8px rgba(90, 75, 58, 0.10);
   background: #fff;
 }
@@ -122,6 +131,6 @@ p {
     padding: 0.5rem;
   }
   .grid-item img {
-    max-width: 90px;
+    max-width: 100%;
   }
 }
