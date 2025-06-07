@@ -192,3 +192,16 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+
+# Ignore all readme files (case-insensitive)
+README.md
+readme.md
+ReadMe.md
+readme/
+README/
+*.readme
+*.README
+*.ReadMe
+*.mdown
+*.markdown
+*.md
