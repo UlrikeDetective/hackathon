@@ -192,3 +192,335 @@ body {
     background-repeat: no-repeat;
   }
 }
+
+- cupcakes
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+*:before,
+*:after {
+  content: "";
+  position: absolute;
+}
+
+$cup-colors: (
+  b: #40C6FF,
+  g: #06BB9C,
+  y: #FFCC6A,
+  r: #88011d
+);
+$icing-colors:(
+  strawberry: #FCE3E7,
+  chocolate: #805231,
+  caramel: #ebc6a8,
+  cream: #E7E3D7
+);
+
+$T: transparent;
+$b:#40C6FF;
+$g:#06BB9C;
+$y:#FFCC6A;
+$r: #88011d;
+$cr: #E7E3D7;
+//$br: brown;
+$c:#805231;
+$v:#E7AC4E;
+
+
+@mixin firefox-only {
+  @at-root {
+    @-moz-document url-prefix() {
+      & {
+        @content;
+      }
+    }
+  }
+}
+@mixin gradient($color){ 
+  background:    
+    radial-gradient(ellipse at 0% 0%, transparent 60%, rgba(0,0,0, 0.1) 70%),    
+    repeating-conic-gradient(at 50% 250%, 
+    hsla(0,0%,100%,.2) 0 1deg, hsla(0,0%,100%,.4) 0 2deg, hsla(0,0%,100%,0) 0 3deg),
+    linear-gradient(transparent 0.2rem, $color 0.2rem), 
+    radial-gradient($color 50%, lighten($color, 10%) 51%  74%, transparent 75%) 0 0/ 0.5rem 0.5rem;
+}
+@mixin gradient-firefox($color){
+  background:    
+    radial-gradient(ellipse at 0% 0%, transparent 60%, rgba(0,0,0, 0.1) 70%),    
+    linear-gradient(transparent 0.2rem, $color 0.2rem), 
+    radial-gradient($color 50%, lighten($color, 10%) 51%  74%, transparent 75%) 0 0/ 0.5rem 0.5rem;
+  
+}
+@mixin icing-gradient($color){
+   background: linear-gradient($color 70%, darken($color, 20%) 98%, darken($color, 50%));
+  box-shadow: inset -8px -8px rgba(darken($color, 50%), 0.08);
+} 
+
+.container{  
+  height: 80vh;
+  width: 80em;
+  max-width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;  
+  @media only screen and (max-width: 48em) {
+    flex-wrap: wrap;
+    height: 100%;
+  }  
+}
+.dessert{  
+  position: relative;
+  width: 25%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  @media only screen and (max-width: 48em) {
+    width: 50%;    
+  }
+  &::before{
+    width: 8em;
+    height: 1em;
+    background: radial-gradient(ellipse at 45% 60%, #f0f1f4cc, transparent);
+    border-radius: 50%;
+    bottom:0;
+  }
+  .cup{
+    position: absolute;
+    width: 7.8em;
+    height: 3.75em;
+    bottom:0.5em;
+    background: lightblue;
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
+    border-radius: 2px 2px 40px 40px;    
+    z-index:2;
+  }  
+  
+  @each $name, $hex in $cup-colors{
+    &.dessert-#{$name}{
+      .cup{
+        @include gradient($hex);
+        @include firefox-only{
+          @include gradient-firefox($hex)
+        }
+      }
+    }
+  }
+  
+  .cake{
+    position: absolute;
+    width: 8em;
+    height: 2em;
+    bottom:calc(0.5em + 3.75em - 0.8em);
+    border-radius: 50%;
+    background: linear-gradient($c 45%, darken( $c, 10% ) 55%);   
+    
+    &.vanilla{
+      background: linear-gradient($v 45%, darken( $v, 10% ) 55%);
+    }
+  }  
+}
+.icing{
+  position: absolute;  
+  bottom:calc(3.75em + 1.2em);  
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  
+  @each $name, $hex in $icing-colors{
+    &.icing-#{$name}{
+      .layer1, .layer2, .layer3{  
+  @include icing-gradient($hex)
+  
+  }
+    }
+  }
+  
+  .layer1{
+    width:7.6em;
+    height: 1.2em;
+    border-radius: 1rem;    
+    position: relative;
+  }
+  .layer2{
+  width:6.8em;
+  height: 1.8em;
+  border-radius: 1.2rem 1.2rem 0.5rem 0.5rem;  
+  position: relative;
+  bottom: -0.2rem
+}
+  .layer3{
+    width:5.2em;
+    height: 2em;
+    border-radius: 150% 20% 30% 50%;  
+    position: relative;
+    bottom: -0.8rem
+  }
+  .layer1::before,
+  .layer2::before,
+  .layer3::before{
+    content:'';
+    position: absolute;  
+    width: 42%;
+    height: 25%;  
+    border-radius: 50%;
+    box-shadow: 0.5rem 0.6rem 0 0 #ffffff16;
+  }
+}
+
+.dessert-y>.icing{ 
+  .layer2,
+  .layer3{
+    display: none;
+  }
+  .layer1{
+    width: 8em;
+    height:1.8em;
+    background: repeating-radial-gradient(circle at -25% -550%, lighten(map-get($icing-colors, strawberry), 20%), map-get($icing-colors, strawberry) 0.08em, darken(map-get($icing-colors, strawberry), 10%) 0.4em, darken(map-get($icing-colors, strawberry), 20%) 0.6em)
+      ;
+    
+    &::after{
+      content:'';
+      position: absolute;  
+      width: 2.5em;
+      height:3.2em;
+      left: 2.4em;
+      bottom: calc(3.2em - 1.8em - 0.6em);
+      background: #DD3D3D;
+      border-radius: 29% 26% 45% 63% / 32% 25% 70% 71% ;
+      transform: rotate(-64deg);
+      background-image: radial-gradient(ellipse at 50% 0%, #E3A31C 10%, darken(map-get($icing-colors, strawberry), 50%) 12% 20%, $T 20%);
+      background-size:0.9em 0.9em;
+      box-shadow: inset 0.4em -0.5em rgba(darken(map-get($icing-colors, chocolate), 60%), 0.15);
+     }
+  }
+  .layer2,
+  .layer2::before{
+    all: unset;
+    position: absolute;  
+    width:0.8em;
+    height:1.2em;
+    left: 1.6em;
+    bottom: calc(3.2em - 0.8em);
+    border-radius: 1em 0;
+    background: #608D36;
+    transform: rotate(15deg);
+    box-shadow: inset -0.2em 0em rgba(darken(#608D36, 60%), 0.15);
+  }
+  .layer2::before{
+    content: '';
+    left: 0.3em;
+    top: -0.6em;
+    transform: rotate(125deg) scale(0.7); 
+    box-shadow: inset 0.2em 0em rgba(darken(#608D36, 60%), 0.15);
+  }
+  
+}
+.dessert-b>.icing{
+  .layer3{
+   &::after{
+    content:'';
+    position: absolute;  
+    width: 2.5em;
+    height:3.2em;
+    background: white;
+    transform: rotate(50deg);
+    border-radius: 50%;
+    right:1.2em;
+    top:-1.2em;
+    z-index:-1;
+    box-shadow: 1em 0 0 0.5em $c,
+                //24px 0 0 1em #90584b
+  }
+  }
+}
+.dessert-g>.icing{
+  .layer3{
+    height:2.4em;
+    width: 5.6em;    
+    border-radius: 2em 2em 0.4em 0.4em;    
+    @include icing-gradient($c);
+    
+    &::after{
+      content: '';
+      position: absolute;
+      width: 1em;
+      height: 2.8em;
+      background: linear-gradient($T 10%, $c 20%, darken($c, 10%) 28%, darken($c, 50%) 36%, darken($c, 20%) 46%);
+      bottom: -1.6em;
+      right: 1.8em;
+      border-radius: 2em;
+      box-shadow: 1em 0.8em 0 -0.2em darken($c, 20%),
+        1.8em 0.5em 0 -0.1em darken($c, 20%);
+    }
+  }
+  
+}
+.dessert-r>.icing{  
+  .layer3{
+    height:1.8em;
+    border-radius: 1em;    
+    &::after{
+      content: '';
+      width: 2.8em;
+      height: 2.4em;
+      //background: $r;
+      border-radius: 50%;
+      left: calc(2.6em - 1em);
+      top: -1.4em;
+      transform: rotate(-25deg);
+      background: radial-gradient(ellipse at 92% 40%, lighten($r, 20%) , lighten($r, 10%) 20%, $r 59%, $cr 40%);
+      //z-index: -1;
+        box-shadow: 1.02em -2.18em 0 0.4em white,
+          1.1em -2em 0 0.3em $r,
+          ;
+    }
+  }
+}
+
+
+.dessert-y{}
+.dessert-b{  
+  &::after{
+    content:'';
+    position: relative;    
+    position: absolute;
+    width: 2em;
+    height:3.6em;    
+    bottom:calc(0.5em + 3.75em + 1.2em + 1.8em + 2em - 2.4em);
+    left:calc(50% + 2em);
+    transform: rotate(24deg);
+    z-index:-2;
+    background:
+      radial-gradient(circle at 50% 0, darken($c, 10%) 60%, $T)0 0/ 0.9em 0.3em,
+      radial-gradient(circle at 50% 0, darken($c, 10%) 60%, $T)1.05em 0/ 0.9em 0.3em,
+       linear-gradient(to right, lighten($c, 40%) 0.02em, #ffffff01 0.1em, $T 0.3em 0.9em,lighten($c,20%) 0.9em 0.92em, white 0.95em 1.05em, lighten($c, 20%) 1.05em 1.07em, #ffffff01 1.15em, $T 1.35em),repeating-linear-gradient($c, $c 0.4em, $cr 0.4em, $cr 0.6em); 
+    border-radius: 2px;       
+    background-repeat: no-repeat;
+    
+  }
+}
+.dessert-g{  
+  &::after{
+    content:'';
+    position: relative;    
+    position: absolute;
+    width: 2.4em;
+    height:3.6em;    
+    bottom:calc(0.5em + 3.75em + 1.2em + 1.8em + 2em - 1.2em);
+    left:calc(50% - 0.8em);
+    background: darken($c, 50%);
+    border-radius: 50%;
+    box-shadow: -0.3em 0 $cr,
+                -0.8em 0 darken($c, 50%);
+    transform: rotate(-20deg);
+    z-index:-2;      
+    background-repeat: no-repeat;
+    
+  }
+}

@@ -1,0 +1,10 @@
+Holistic Webdev: Office Space
+Introducing a brand new prompt! Design your dream intranet homepage 
+for a fictional company using CSS, HTML, and JavaScript only 
+(frameworks/libraries welcome). Show us how you would design the perfect 
+digital workspace - are there upcoming events? team spotlights? useful 
+resources? The content and widgets featured are up to you!
+
+Here is the submission template for anyone that wants to jump right in, 
+but please review all challenge rules on the official challenge page 
+before submitting.
