@@ -255,71 +255,71 @@ body {
 .figure .face::before, .figure .face::after {
     content: '';
     position: absolute;
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
     background-color: var(--color-900);
     border-radius: 50%;
-    top: 50px;
+    top: 120px;
 }
 
 .figure .face::before {
-    left: 40px;
+    left: 80px;
 }
 
 .figure .face::after {
-    right: 40px;
+    right: 80px;
 }
 
 .figure .mouth {
     position: absolute;
-    width: 60px;
-    height: 30px;
-    border: 5px solid var(--color-900);
+    width: 100px;
+    height: 50px;
+    border: 10px solid var(--color-900);
     border-top: none;
-    border-radius: 0 0 30px 30px;
-    bottom: 30px;
+    border-radius: 0 0 50px 50px;
+    bottom: 70px;
     left: 50%;
     transform: translateX(-50%);
 }
 
-.figure .arm, .figure .leg {
+.figure .arm {
     position: absolute;
-    width: 10px;
-    height: 80px;
+    width: 15px;
+    height: 120px;
     background-color: var(--color-900);
+    top: 150px;
 }
 
 .figure .arm.left {
-    top: 80px;
-    left: -20px;
-    transform: rotate(45deg);
-}
-
-.figure .arm.right {
-    top: 80px;
-    right: -20px;
-    transform: rotate(-45deg);
-}
-
-.figure .leg.left {
-    top: 180px;
-    left: 30px;
-    transform: rotate(-20deg);
-}
-
-.figure .leg.right {
-    top: 180px;
-    right: 30px;
+    left: 20px;
     transform: rotate(20deg);
 }
 
-.scene-2 .laptop {
-    bottom: -150px;
+.figure .arm.right {
+    right: 20px;
+    transform: rotate(-20deg);
+}
+
+.figure .forearm {
+    position: absolute;
+    width: 15px;
+    height: 100px;
+    background-color: var(--color-900);
+    bottom: -80px;
+    left: -40px;
+    transform: rotate(90deg);
+}
+
+.scene-2 .figure .laptop {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
     transform: translateX(-50%) scale(0.8);
 }
 
-.scene-2 .coffee-cup {
-    bottom: -100px;
-    right: -120px;
+.scene-2 .figure .coffee-cup {
+    position: absolute;
+    bottom: 0px;
+    right: -100px;
     transform: scale(0.7);
 }
