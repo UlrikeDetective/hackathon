@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="scene">
+    <div class="scene scene-1">
         <div class="window">
             <div class="sun"></div>
         </div>
@@ -22,5 +22,51 @@
             </div>
         </div>
     </div>
+
+    <div class="scene scene-2 hidden">
+        <div class="figure-container">
+            <div class="figure figure-1">
+                <div class="face"></div>
+                <div class="arm left"></div>
+                <div class="arm right"></div>
+                <div class="leg left"></div>
+                <div class="leg right"></div>
+                <div class="laptop">
+                    <div class="laptop-screen"></div>
+                    <div class="laptop-base"></div>
+                </div>
+                <div class="coffee-cup">
+                    <div class="coffee"></div>
+                    <div class="handle"></div>
+                </div>
+            </div>
+            <div class="figure figure-2">
+                <div class="face"></div>
+                <div class="arm left"></div>
+                <div class="arm right"></div>
+                <div class="leg left"></div>
+                <div class="leg right"></div>
+                <div class="laptop">
+                    <div class="laptop-screen"></div>
+                    <div class "laptop-base"></div>
+                </div>
+                <div class="coffee-cup">
+                    <div class="coffee"></div>
+                    <div class="handle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const laptop = document.querySelector('.scene-1 .laptop');
+        const scene1 = document.querySelector('.scene-1');
+        const scene2 = document.querySelector('.scene-2');
+
+        laptop.addEventListener('click', () => {
+            scene1.classList.add('hidden');
+            scene2.classList.remove('hidden');
+        });
+    </script>
 </body>
 </html>

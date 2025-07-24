@@ -205,3 +205,121 @@ body {
     border-left: none;
     border-radius: 0 25px 25px 0;
 }
+
+.handle {
+    position: absolute;
+    top: 20px;
+    right: -30px;
+    width: 30px;
+    height: 50px;
+    border: 10px solid var(--color-800);
+    border-left: none;
+    border-radius: 0 25px 25px 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.scene-2 {
+    background-color: var(--color-200);
+}
+
+.figure-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+}
+
+.figure {
+    position: relative;
+}
+
+.figure .face {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.figure-1 .face {
+    background-color: #FFD700;
+}
+
+.figure-2 .face {
+    background-color: #4682B4;
+}
+
+.figure .face::before, .figure .face::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: var(--color-900);
+    border-radius: 50%;
+    top: 50px;
+}
+
+.figure .face::before {
+    left: 40px;
+}
+
+.figure .face::after {
+    right: 40px;
+}
+
+.figure .mouth {
+    position: absolute;
+    width: 60px;
+    height: 30px;
+    border: 5px solid var(--color-900);
+    border-top: none;
+    border-radius: 0 0 30px 30px;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.figure .arm, .figure .leg {
+    position: absolute;
+    width: 10px;
+    height: 80px;
+    background-color: var(--color-900);
+}
+
+.figure .arm.left {
+    top: 80px;
+    left: -20px;
+    transform: rotate(45deg);
+}
+
+.figure .arm.right {
+    top: 80px;
+    right: -20px;
+    transform: rotate(-45deg);
+}
+
+.figure .leg.left {
+    top: 180px;
+    left: 30px;
+    transform: rotate(-20deg);
+}
+
+.figure .leg.right {
+    top: 180px;
+    right: 30px;
+    transform: rotate(20deg);
+}
+
+.scene-2 .laptop {
+    bottom: -150px;
+    transform: translateX(-50%) scale(0.8);
+}
+
+.scene-2 .coffee-cup {
+    bottom: -100px;
+    right: -120px;
+    transform: scale(0.7);
+}
