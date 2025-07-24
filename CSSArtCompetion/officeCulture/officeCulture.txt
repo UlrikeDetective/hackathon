@@ -1,0 +1,80 @@
+CSS Art: Office Culture
+
+Inspiration
+My inspiration for this project comes from a mobile workspace, working
+from a modern cafe with a lot of space and sitting areas where people area
+sitting in front of their laptops, sipping coffee, and working on their
+projects. I want to capture the essence of a high desk: 
+the essential laptop from the back, the ever-present cup of coffee 
+ and a window in the back with the sun shining in.
+The style is simple and minimalistic, with a focus on the
+details that make a workspace feel personal and inviting. The office culture -
+non office culture. 
+
+Challenge
+
+draw the scene with CSS art.
+
+Use to create the above scene:
+Colors: --color-50: #F7F2EE;
+--color-100: #E7D9CF;
+--color-200: #D8C1B0;
+--color-300: #C9A992;
+--color-400: #BA9173;
+--color-500: #AB7854;
+--color-600: #8C6345;
+--color-700: #6F4E37;
+--color-800: #4F3727;
+--color-900: #302218;
+--color-950: #110C08;
+
+Demo
+The live demo showcases a dynamic and responsive CSS art piece. The entire office desk scene is rendered with HTML and styled with Tailwind CSS, featuring subtle animations that bring it to life.
+
+visit: the site
+
+Key features include:
+
+Pure CSS Art: No image files are used for the artwork.
+Interactive Elements: Hover over elements like the coffee mug to see 
+small interactive effects.
+Subtle Animations: Gentle animations like the movement of the sun.
+Responsive Design: The layout gracefully adapts to different screen sizes.
+Here's a snapshot of the scene: Add link to website from Github
+
+Journey
+Add journey to the project here.
+
+How to submit
+In order to participate, you will need to publish a post using the 
+submission template provided.
+
+Do I need a license for my code?
+You are not required to license your code but we strongly recommend 
+that you do. Here are some you may consider: MIT, Apache, BSD-2, BSD-3, 
+or Commons Clause.
+
+Templet for submission
+_This is a submission for [Frontend Challenge: Office Edition sponsored by Axero, CSS Art: Office Culture](https://dev.to/challenges/frontend/axero)._
+
+## Inspiration
+
+<!-- What are you highlighting today? -->
+
+## Demo 
+
+<!-- Show us your CSS Art! You can directly embed an editor into this post 
+(see the FAQ section of the challenge page) or you can share an image of 
+your project and share a public link to the code. -->
+
+## Journey 
+
+<!-- Tell us about your process, what you learned, anything you are 
+particularly proud of, what you hope to do next, etc. -->
+
+
+<!-- We encourage you to consider adding a license for your code. -->
+
+<!-- Don't forget to add a cover image to your post (if you want). -->
+
+<!-- Thanks for participating! -->

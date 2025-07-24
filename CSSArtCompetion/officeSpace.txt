@@ -8,3 +8,42 @@ resources? The content and widgets featured are up to you!
 Here is the submission template for anyone that wants to jump right in, 
 but please review all challenge rules on the official challenge page 
 before submitting.
+
+How to submit
+In order to participate, you will need to publish a post using the 
+submission template provided.
+
+You are welcome to use any frameworks or libraries you prefer so long 
+as your submission is frontend only.
+
+Do I need a license for my code?
+You are not required to license your code but we strongly recommend 
+that you do. Here are some you may consider: MIT, Apache, BSD-2, BSD-3, 
+or Commons Clause.
+
+Templet for submission
+*This is a submission for [Frontend Challenge: Office Edition sponsored by Axero, Holistic Webdev: Office Space](https://dev.to/challenges/frontend/axero)*
+
+## What I Built
+
+<!-- Tell us about your intranet layout and what you were looking to achieve. -->
+
+## Demo
+
+<!-- Show us your project! Share a public link to your code and embed your CodePen (or similar editor) directly into this post (see the FAQ section from the challenge page). -->
+
+## Journey
+
+<!-- Tell us about your process, what you learned, any choices you are particularly proud of, etc. -->
+
+<!-- Team Submissions: Please pick one member to publish the submission and credit teammates by listing their DEV usernames directly in the body of the post. -->
+
+<!-- ⚠️ By entering the challenge, you grant Axero a worldwide, royalty-free license to use your submission - whether on our website, in marketing materials, or any other Axero channels - at no additional cost. You retain full ownership of your work, and we'll always credit you (with a link back to your original submission) whenever it's displayed publicly.
+
+By submitting, you affirm that you hold all necessary rights or licenses for the submission. -->
+
+<!-- We encourage you to consider adding a license for your code. -->
+
+<!-- Don't forget to add a cover image to your post (if you want). -->
+
+<!-- Thanks for participating! -->
