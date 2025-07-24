@@ -132,6 +132,17 @@ body {
     opacity: 0.5;
 }
 
+.laptop-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--color-50);
+    font-family: monospace;
+    font-size: 24px;
+    text-align: center;
+}
+
 .laptop-base {
     position: absolute;
     bottom: 0;
