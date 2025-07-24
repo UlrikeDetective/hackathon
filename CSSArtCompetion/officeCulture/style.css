@@ -300,6 +300,26 @@ body {
     transform: rotate(-20deg);
 }
 
+.scene-2 .laptop-screen {
+    background-color: var(--color-800);
+}
+
+.scene-2 .laptop-screen::before {
+    display: none;
+}
+
+@keyframes typing {
+    0% {
+        transform: rotate(90deg);
+    }
+    50% {
+        transform: rotate(80deg);
+    }
+    100% {
+        transform: rotate(90deg);
+    }
+}
+
 .figure .forearm {
     position: absolute;
     width: 15px;
@@ -308,6 +328,7 @@ body {
     bottom: -80px;
     left: -40px;
     transform: rotate(90deg);
+    animation: typing 0.5s infinite;
 }
 
 .scene-2 .figure .laptop {
