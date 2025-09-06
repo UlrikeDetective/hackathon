@@ -86,13 +86,18 @@ Build and submit container:
 Deploy to Cloud Run:
 
 ```bash
-gcloud run deploy fridge-chef \
-  --image gcr.io/PROJECT_ID/fridge-chef \
+gcloud run deploy fromfridgeto \
+  --image gcr.io/challenge-471312/fromfridgeto \
   --platform managed \
   --region europe-west1 \
   --allow-unauthenticated \
   --set-secrets=GEMINI_API_KEY=gemini-api-key:latest
+
   ```
+
+  ```bash
+  curl -X POST -F "image=@fridge_pics/fridge1.png" https://fromfridgeto-578201669268.europe-west1.run.app/analyze
+```
 
 ### Project Structure
 FromFridgeTo/

@@ -1,12 +1,16 @@
 import os
 from flask import Flask, request, jsonify
-from google.genai import Client
+from google.genai import Client, TextInput, ImageInput
 
 # Initialize Flask app
 app = Flask(__name__)
 
 # Initialize Gemini client using API key from environment
-client = Client(api_key=os.environ.get("GEMINI_API_KEY"))
+api_key = os.environ.get("GEMINI_API_KEY")
+if not api_key:
+    raise ValueError("GEMINI_API_KEY environment variable not set")
+
+client = Client(api_key=api_key)
 
 @app.route("/")
 def home():
@@ -22,34 +26,46 @@ def analyze():
 
     image_file = request.files["image"]
 
-    # Step 1: Detect items in the fridge image (multimodal)
-    detection_response = client.generate_content(
-        model="gemini-2.5",
-        modalities=["image", "text"],
-        input=image_file.read(),
-        prompt="List all the food items in this fridge image as a comma-separated list."
-    )
+    # --- Step 1: Detect items from the fridge image ---
+    try:
+        detection_response = client.chat(
+            model="gemini-2.5",
+            messages=[{
+                "author": "user",
+                "content": [
+                    ImageInput(image_file.read()),
+                    TextInput(text="List all the food items in this fridge image as a comma-separated list.")
+                ]
+            }]
+        )
+        items_text = detection_response.output_text
+        items_list = [item.strip() for item in items_text.split(",") if item.strip()]
+    except Exception as e:
+        return jsonify({"error": f"Detection failed: {str(e)}"}), 500
 
-    items_text = detection_response.text
-    items_list = [item.strip() for item in items_text.split(",")]
+    if not items_list:
+        return jsonify({"error": "No items detected in the image."}), 200
 
-    # Step 2: Generate a recipe based on detected items
-    recipe_prompt = (
-        f"You have these ingredients: {', '.join(items_list)}. "
-        "Suggest a simple recipe with step-by-step instructions."
-    )
-
-    recipe_response = client.generate_content(
-        model="gemini-2.5",
-        contents=[recipe_prompt]
-    )
-
-    recipe_text = recipe_response.text.strip()
+    # --- Step 2: Generate a recipe based on detected items ---
+    try:
+        recipe_prompt = (
+            f"You have these ingredients: {', '.join(items_list)}. "
+            "Suggest a simple recipe with step-by-step instructions."
+        )
+        recipe_response = client.chat(
+            model="gemini-2.5",
+            messages=[{"author": "user", "content": [TextInput(text=recipe_prompt)]}]
+        )
+        recipe_text = recipe_response.output_text.strip()
+    except Exception as e:
+        return jsonify({"error": f"Recipe generation failed: {str(e)}"}), 500
 
     return jsonify({
         "detected_items": items_list,
         "recipe": recipe_text
     })
 
+
 if __name__ == "__main__":
+    # Cloud Run expects port 8080
     app.run(host="0.0.0.0", port=8080)
