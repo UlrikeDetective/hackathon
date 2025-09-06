@@ -1,45 +1,55 @@
-from flask import Flask, request, jsonify
 import os
-from dotenv import load_dotenv
-from google import genai
-from google.genai import types
-import json, re
+from flask import Flask, request, jsonify
+from google.genai import Client
 
-# Load .env locally
-load_dotenv()
-
-# Grab API key
-api_key = os.getenv("GEMINI_API_KEY")
-if not api_key:
-    raise ValueError("❌ GEMINI_API_KEY not found in environment!")
-
-# Create client with API key
-client = genai.Client(api_key=api_key)
-
+# Initialize Flask app
 app = Flask(__name__)
 
-@app.route("/test", methods=["GET"])
-def test():
-    return jsonify({"status": "ok"})
+# Initialize Gemini client using API key from environment
+client = Client(api_key=os.environ.get("GEMINI_API_KEY"))
+
+@app.route("/")
+def home():
+    return """
+    <h1>FromFridgeTo</h1>
+    <p>Upload a fridge image at /analyze to detect items and get a recipe.</p>
+    """
 
 @app.route("/analyze", methods=["POST"])
 def analyze():
-    f = request.files["image"]
-    img_bytes = f.read()
-    image_part = types.Part.from_bytes(data=img_bytes, mime_type=f.mimetype)
+    if "image" not in request.files:
+        return jsonify({"error": "No image provided"}), 400
 
-    prompt = (
-        "Look at this fridge photo and list the food items you see. "
-        "Return ONLY valid JSON in the format: {\"items\": [\"item1\", \"item2\", ...]}"
+    image_file = request.files["image"]
+
+    # Step 1: Detect items in the fridge image (multimodal)
+    detection_response = client.generate_content(
+        model="gemini-2.5",
+        modalities=["image", "text"],
+        input=image_file.read(),
+        prompt="List all the food items in this fridge image as a comma-separated list."
     )
 
-    resp = client.models.generate_content(
-        model="gemini-2.5-flash",
-        contents=[prompt, image_part]
+    items_text = detection_response.text
+    items_list = [item.strip() for item in items_text.split(",")]
+
+    # Step 2: Generate a recipe based on detected items
+    recipe_prompt = (
+        f"You have these ingredients: {', '.join(items_list)}. "
+        "Suggest a simple recipe with step-by-step instructions."
     )
 
-    text = resp.text.strip()
-    text = re.sub(r"^```(?:json)?|```$", "", text)
-    data = json.loads(text)
+    recipe_response = client.generate_content(
+        model="gemini-2.5",
+        contents=[recipe_prompt]
+    )
 
-    return jsonify(data)
+    recipe_text = recipe_response.text.strip()
+
+    return jsonify({
+        "detected_items": items_list,
+        "recipe": recipe_text
+    })
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=8080)

@@ -103,6 +103,12 @@ FromFridgeTo/
 ├── .gitignore
 └── README.md
 
+### Test app
+```bash
+curl -X POST -F "image=@fridge_pics/fridge1.png" https://fromfridgeto-578201669268.europe-west1.run.app/analyze
+```
+
+
 ### License
 
 MIT License © 2025 Ulrike Herold
