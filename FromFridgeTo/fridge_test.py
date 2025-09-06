@@ -10,7 +10,7 @@ load_dotenv()
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 # Path to your fridge image
-image_path = "fridge.jpg"
+image_path = "fridge_pics/fridge2.jpg"
 
 with open(image_path, "rb") as f:
     img_bytes = f.read()
