@@ -76,7 +76,10 @@ def analyze():
         return jsonify({"error": "No image provided"}), 400
 
     image_file = request.files["image"]
-    img_pil = PIL.Image.open(image_file.stream)
+    
+    # Read the image data into memory first
+    image_data = image_file.read()
+    img_pil = PIL.Image.open(BytesIO(image_data))
 
     # Convert to RGB to ensure compatibility, then save to BytesIO
     if img_pil.mode != 'RGB':
@@ -89,8 +92,8 @@ def analyze():
 
     # --- Step 1: Detect items from the fridge image ---
     try:
-        model = genai.GenerativeModel('gemini-1.5-flash-latest')
-        response = model.generate_content(["List all the food items in this fridge image as a comma-separated list.", img_byte_arr])
+        model = genai.GenerativeModel('gemini-pro-vision')
+        response = model.generate_content(["List all the food items in this fridge image as a comma-separated list.", genai.upload_file(img_byte_arr)])
         items_text = response.text
         items_list = parse_items(items_text)
     except Exception as e:
@@ -102,7 +105,7 @@ def analyze():
 
     # --- Step 2: Generate a recipe based on detected items ---
     try:
-        model = genai.GenerativeModel('gemini-1.5-flash-latest')
+        model = genai.GenerativeModel('gemini-pro-vision')
         recipe_prompt = (
             f"You have these ingredients: {', '.join(items_list)}. "
             "Suggest a simple recipe with step-by-step instructions."

@@ -97,38 +97,88 @@ The app will return JSON with a list of detected items:
   "items": ["eggs", "spinach", "cheddar", "milk"]
 }
 
-### Deployment (Cloud Run)
+## Deployment to Google Cloud Run
 
-Store your API key in Google Secret Manager:
+This section outlines the steps to deploy this Flask application to Google Cloud Run.
 
-```bash
-gcloud secrets create gemini-api-key --replication-policy="automatic"
-echo -n "your_api_key_here" | gcloud secrets versions add gemini-api-key --data-file=-
+### Containerization (Dockerfile)
+
+The application is containerized using a `Dockerfile`, which defines the environment and commands to run the application within a Docker container. This `Dockerfile` is used by Google Cloud Build to create the container image.
+
+```dockerfile
+# Use official lightweight Python image
+FROM python:3.11-slim
+
+# Set working directory
+WORKDIR /app
+
+# Copy requirements and install dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the rest of the app
+COPY . .
+
+# Set the port Cloud Run will use
+ENV PORT 8080
+
+# Expose the port
+EXPOSE 8080
+
+# Run the app with Gunicorn WSGI server
+CMD ["gunicorn", "--bind", "0.0.0.0:8080", "app:app"]
 ```
 
+**Prerequisites:**
+*   Ensure you have the Google Cloud SDK installed and authenticated.
+*   Set your `gcloud` project:
+    ```bash
+    gcloud config set project challenge-471312
+    ```
 
-Build and submit container:
+**Steps:**
 
-```bash 
-gcloud builds submit --tag gcr.io/PROJECT_ID/fromfridgeto
-```
+1.  **Enable necessary Google Cloud APIs:**
+    ```bash
+    gcloud services enable run.googleapis.com cloudbuild.googleapis.com artifactregistry.googleapis.com
+    ```
 
+2.  **Create an Artifact Registry repository:**
+    ```bash
+    gcloud artifacts repositories create from-fridge-to-app --repository-format=docker --location=us-central1 --description="Docker repository for FromFridgeTo app"
+    ```
 
-Deploy to Cloud Run:
+3.  **Build and push the Docker image to Artifact Registry:**
+    ```bash
+    gcloud builds submit --tag us-central1-docker.pkg.dev/challenge-471312/from-fridge-to-app/from-fridge-to-app
+    ```
 
-```bash
-gcloud run deploy from-fridge-to \
-  --image gcr.io/challenge-471312/from-fridge-to \
-  --platform managed \
-  --region europe-west1 \
-  --allow-unauthenticated \
-  --set-secrets=GEMINI_API_KEY=gemini-api-key:latest
+4.  **Store your Gemini API Key in Secret Manager:**
+    ```bash
+    echo "YOUR_GEMINI_API_KEY" | gcloud secrets create GEMINI_API_KEY --data-file=-
+    ```
+    (Replace `YOUR_GEMINI_API_KEY` with your actual key)
+    If you need to update the key:
+    ```bash
+    echo "YOUR_UPDATED_GEMINI_API_KEY" | gcloud secrets versions add GEMINI_API_KEY --data-file=-
+    ```
 
-  ```
+5.  **Grant Cloud Run service account permission to access the secret:**
+    First, get the service account email:
+    ```bash
+    gcloud run services describe from-fridge-to-app --platform managed --region us-central1 --format='value(spec.template.spec.serviceAccountName)'
+    ```
+    Then, grant the permission (replace `SERVICE_ACCOUNT_EMAIL` with the email from the previous command):
+    ```bash
+    gcloud secrets add-iam-policy-binding GEMINI_API_KEY --member="serviceAccount:SERVICE_ACCOUNT_EMAIL" --role="roles/secretmanager.secretAccessor"
+    ```
 
-  ```bash
-  curl -X POST -F "image=@fridge_pics/fridge1.png" https://fromfridgeto-578201669268.europe-west1.run.app/analyze
-```
+6.  **Deploy the image to Cloud Run and configure the secret:**
+    ```bash
+    gcloud run deploy from-fridge-to-app --image us-central1-docker.pkg.dev/challenge-471312/from-fridge-to-app/from-fridge-to-app --platform managed --region us-central1 --allow-unauthenticated --set-secrets=GEMINI_API_KEY=GEMINI_API_KEY:latest
+    ```
+
+After these steps, your application should be deployed and accessible at the provided Cloud Run URL.
 
 ### Project Structure
 FromFridgeTo/
