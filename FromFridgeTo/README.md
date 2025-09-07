@@ -50,6 +50,12 @@ Veo (requires paid tier)
 
 ### Prerequisites
 
+virtual enviroment
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
 - Python 3.11+  
 - `pip`  
 - Google Cloud account with **Generative AI (Gemini) API** enabled  
@@ -111,8 +117,8 @@ gcloud builds submit --tag gcr.io/PROJECT_ID/fromfridgeto
 Deploy to Cloud Run:
 
 ```bash
-gcloud run deploy fromfridgeto \
-  --image gcr.io/challenge-471312/fromfridgeto \
+gcloud run deploy from-fridge-to \
+  --image gcr.io/challenge-471312/from-fridge-to \
   --platform managed \
   --region europe-west1 \
   --allow-unauthenticated \
