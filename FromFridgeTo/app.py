@@ -46,6 +46,29 @@ def home():
 def test():
     return "App is running!"
 
+import re
+
+def format_recipe(recipe_text):
+    lines = recipe_text.split('\n')
+    html = ""
+    for line in lines:
+        line = line.strip()
+        if line.startswith('## '):
+            html += f'<h3>{line.replace('## ', '')}</h3>'
+        elif line.startswith('**'):
+            html += f'<h4>{line.replace('**', '')}</h4>'
+        elif line.startswith('*'):
+            html += f'<ul><li>{line.replace('* ', '')}</li></ul>'
+        else:
+            html += f'<p>{line}</p>'
+    return html
+
+def parse_items(items_text):
+    # Remove introductory sentence if it exists
+    if ":" in items_text:
+        items_text = items_text.split(":", 1)[1]
+    return [item.strip() for item in items_text.split(",") if item.strip()]
+
 @app.route("/analyze", methods=["POST"])
 def analyze():
     if "image" not in request.files:
@@ -60,13 +83,13 @@ def analyze():
         model = genai.GenerativeModel('gemini-1.5-flash-latest')
         response = model.generate_content(["List all the food items in this fridge image as a comma-separated list.", img])
         items_text = response.text
-        items_list = [item.strip() for item in items_text.split(",") if item.strip()]
+        items_list = parse_items(items_text)
     except Exception as e:
         logging.error(f"Detection failed: {e}")
         return jsonify({"error": "Detection failed. See logs for details."}), 500
 
     if not items_list:
-        return jsonify({"error": "No items detected in the image."}), 200
+        return jsonify({"error": "No items detected in the image."}, 200)
 
     # --- Step 2: Generate a recipe based on detected items ---
     try:
@@ -77,14 +100,13 @@ def analyze():
         )
         response = model.generate_content(recipe_prompt)
         recipe_text = response.text.strip()
+        recipe_html = format_recipe(recipe_text)
     except Exception as e:
         logging.error(f"Recipe generation failed: {e}")
-        return jsonify({"error": "Recipe generation failed. See logs for details."}), 500
+        return jsonify({"error": "Recipe generation failed. See logs for details."}, 500)
 
-    return jsonify({
-        "detected_items": items_list,
-        "recipe": recipe_text
-    })
+    return render_template("result.html", items=items_list, recipe=recipe_html)
+
 
 
 if __name__ == "__main__":
