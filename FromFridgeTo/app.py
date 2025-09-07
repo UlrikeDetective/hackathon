@@ -54,13 +54,13 @@ def format_recipe(recipe_text):
     for line in lines:
         line = line.strip()
         if line.startswith('## '):
-            html += f'<h3>{line.replace('## ', '')}</h3>'
+            html += '<h3>' + line.replace('## ', '') + '</h3>'
         elif line.startswith('**'):
-            html += f'<h4>{line.replace('**', '')}</h4>'
+            html += '<h4>' + line.replace('**', '') + '</h4>'
         elif line.startswith('*'):
-            html += f'<ul><li>{line.replace('* ', '')}</li></ul>'
+            html += '<ul><li>' + line.replace('* ', '') + '</li></ul>'
         else:
-            html += f'<p>{line}</p>'
+            html += '<p>' + line + '</p>'
     return html
 
 def parse_items(items_text):
@@ -86,7 +86,7 @@ def analyze():
         items_list = parse_items(items_text)
     except Exception as e:
         logging.error(f"Detection failed: {e}")
-        return jsonify({"error": "Detection failed. See logs for details."}), 500
+        return jsonify({"error": "Detection failed. See logs for details."}, 500)
 
     if not items_list:
         return jsonify({"error": "No items detected in the image."}, 200)
