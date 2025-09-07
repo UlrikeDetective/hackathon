@@ -28,6 +28,7 @@ Live API (free tier supports 3 concurrent sessions)
 Imagen (requires paid tier)
 Veo (requires paid tier)
 
+<https://dev.to/devteam/join-the-google-ai-studio-multimodal-challenge-3000-in-prizes-58g?>
 ---
 
 ## Features
