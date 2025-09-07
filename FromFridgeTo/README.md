@@ -103,7 +103,8 @@ echo -n "your_api_key_here" | gcloud secrets versions add gemini-api-key --data-
 
 Build and submit container:
 
-```bash gcloud builds submit --tag gcr.io/PROJECT_ID/fridge-chef
+```bash 
+gcloud builds submit --tag gcr.io/PROJECT_ID/fromfridgeto
 ```
 
 
