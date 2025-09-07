@@ -4,6 +4,7 @@ from flask import Flask, request, jsonify, render_template
 import google.generativeai as genai
 from google.cloud import secretmanager
 import PIL.Image
+from io import BytesIO
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
@@ -75,13 +76,21 @@ def analyze():
         return jsonify({"error": "No image provided"}), 400
 
     image_file = request.files["image"]
-    img = PIL.Image.open(image_file.stream)
+    img_pil = PIL.Image.open(image_file.stream)
+
+    # Convert to RGB to ensure compatibility, then save to BytesIO
+    if img_pil.mode != 'RGB':
+        img_pil = img_pil.convert('RGB')
+    
+    img_byte_arr = BytesIO()
+    img_pil.save(img_byte_arr, format='jpeg') # Changed from PNG to JPEG
+    img_byte_arr = img_byte_arr.getvalue()
 
 
     # --- Step 1: Detect items from the fridge image ---
     try:
         model = genai.GenerativeModel('gemini-1.5-flash-latest')
-        response = model.generate_content(["List all the food items in this fridge image as a comma-separated list.", img])
+        response = model.generate_content(["List all the food items in this fridge image as a comma-separated list.", img_byte_arr])
         items_text = response.text
         items_list = parse_items(items_text)
     except Exception as e:
