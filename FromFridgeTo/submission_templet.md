@@ -3,16 +3,26 @@
 *This is a submission for the [Google AI Studio Multimodal Challenge](https://dev.to/challenges/google-ai-studio-2025-09-03)*
 
 ## What I Built
-<!-- Provide an overview of your applet and what problem it solves or experience it creates. -->
+"From Fridge to" is a web applet that helps users reduce food waste and discover new recipes. By simply uploading a photo of their refrigerator's contents, the app leverages Google's Gemini multimodal AI to identify available ingredients. It then intelligently suggests recipes that can be made with those ingredients, providing a practical solution for meal planning and utilizing existing food items.
 
 ## Demo
-<!-- Share a link to your deployed applet and include screenshots or videos of your solution. If you used Gemini 2.5 Flash Image during the free trial period and it is no longer available for your app, be sure to include a video so we can see your project in action. -->
+*(Please provide a link to your deployed applet here, e.g., `https://your-cloud-run-url.run.app`)*
+*(Include screenshots or videos of your solution here. For example, a screenshot of the upload page, a fridge photo, and the resulting recipe suggestions. If Gemini 2.5 Flash Image was used during a free trial and is no longer available, a video demonstration is highly recommended.)*
 
 ## How I Used Google AI Studio
-<!-- Explain how you leveraged Google AI Studio and which Multimodal capabilities you implemented. -->
+I leveraged Google AI Studio by integrating the Gemini 2.5 Flash/Pro model. This allowed me to utilize its powerful multimodal capabilities for both image understanding and text generation. Specifically, Gemini was used to:
+- Analyze uploaded images of fridge contents to identify and extract individual food items.
+- Generate creative and relevant recipe suggestions based on the detected ingredients.
 
 ## Multimodal Features
-<!-- Describe the specific Multimodal functionality you built and why it  enhances the user experience. -->
+The core multimodal features of "From Fridge to" are:
+- **Image Recognition (Gemini 2.5 Flash/Pro):** The application takes an image input (a photo of a fridge) and processes it using Gemini's vision capabilities to accurately identify various food items and ingredients within the image. This enhances the user experience by automating the ingredient listing process, making it quick and effortless.
+- **Natural Language Generation (Gemini 2.5 Flash/Pro):** Based on the identified ingredients, Gemini generates natural language recipe suggestions. This goes beyond simple keyword matching by understanding the context of the ingredients and providing coherent, actionable recipes, significantly enhancing the user's ability to utilize their existing food.
+
+## Challenges Faced:
+- Finding an idea ;-)
+- API rate limits
+- Deployment to Google Cloud (encountered some internal errors)
 
 <!-- Don't forget to add a cover image (if you want). -->
 
