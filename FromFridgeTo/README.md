@@ -128,6 +128,12 @@ EXPOSE 8080
 # Run the app with Gunicorn WSGI server
 CMD ["gunicorn", "--bind", "0.0.0.0:8080", "app:app"]
 ```
+## Test locally Docker
+
+```bash
+docker build -t from-fridge-to .
+docker run -p 8080:8080 from-fridge-to
+````
 
 **Prerequisites:**
 *   Ensure you have the Google Cloud SDK installed and authenticated.

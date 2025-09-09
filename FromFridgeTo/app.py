@@ -5,6 +5,7 @@ import google.generativeai as genai
 from dotenv import load_dotenv
 from PIL import Image
 from io import BytesIO
+from flask import send_from_directory
 
 # Load .env (local dev only, Cloud Run uses secrets/env vars)
 load_dotenv()
@@ -19,6 +20,11 @@ if not api_key:
     raise ValueError("GEMINI_API_KEY not found in environment variables.")
 
 genai.configure(api_key=api_key)
+
+# Serve static files in production
+@app.route('/static/<path:filename>')
+def static_files(filename):
+    return send_from_directory(app.static_folder, filename)
 
 @app.route("/")
 def home():
