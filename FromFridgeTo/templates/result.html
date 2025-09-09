@@ -1,31 +1,21 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Recipe</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>Fridge Results</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="container">
-        <h1>Your Recipe is Ready!</h1>
-        
-        <div class="result">
-            <h2>Detected Ingredients</h2>
-            <ul>
-                {% for item in items %}
-                <li>{{ item }}</li>
-                {% endfor %}
-            </ul>
-        </div>
+    <h1>Detected Items</h1>
+    <ul>
+        {% for item in items %}
+        <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
 
-        <div class="recipe">
-            <h2>Recipe Suggestion</h2>
-            <p>{{ recipe|safe }}</p>
-        </div>
-
-        <a href="/">Try another image</a>
+    <h2>Suggested Recipe</h2>
+    <div class="recipe">
+        {{ recipe|safe }}
     </div>
 </body>
 </html>
