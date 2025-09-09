@@ -6,7 +6,7 @@
 "From Fridge to" is a web applet that helps users reduce food waste and discover new recipes. By simply uploading a photo of their refrigerator's contents, the app leverages Google's Gemini multimodal AI to identify available ingredients. It then intelligently suggests recipes that can be made with those ingredients, providing a practical solution for meal planning and utilizing existing food items.
 
 ## Demo
-*(Please provide a link to your deployed applet here, e.g., `https://your-cloud-run-url.run.app`)*
+*(Please provide a link to your deployed applet here `https://from-fridge-to-app-578201669268.us-central1.run.app`)*
 *(Include screenshots or videos of your solution here. For example, a screenshot of the upload page, a fridge photo, and the resulting recipe suggestions. If Gemini 2.5 Flash Image was used during a free trial and is no longer available, a video demonstration is highly recommended.)*
 
 ## How I Used Google AI Studio

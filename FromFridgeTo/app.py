@@ -2,21 +2,18 @@ import os
 import logging
 from flask import Flask, request, jsonify, render_template
 import google.generativeai as genai
-from google.cloud import secretmanager
-import PIL.Image
-from io import BytesIO
 from dotenv import load_dotenv
+from PIL import Image
+from io import BytesIO
 
-# Load environment variables from .env file
+# Load .env (local dev only, Cloud Run uses secrets/env vars)
 load_dotenv()
 
-# Configure logging
 logging.basicConfig(level=logging.INFO)
 
-# Initialize Flask app
 app = Flask(__name__)
 
-# Initialize Gemini client
+# Configure Gemini
 api_key = os.environ.get("GEMINI_API_KEY")
 if not api_key:
     raise ValueError("GEMINI_API_KEY not found in environment variables.")
@@ -31,25 +28,7 @@ def home():
 def test():
     return "App is running!"
 
-import re
-
-def format_recipe(recipe_text):
-    lines = recipe_text.split('\n')
-    html = ""
-    for line in lines:
-        line = line.strip()
-        if line.startswith('## '):
-            html += '<h3>' + line.replace('## ', '') + '</h3>'
-        elif line.startswith('**'):
-            html += '<h4>' + line.replace('**', '') + '</h4>'
-        elif line.startswith('*'):
-            html += '<ul><li>' + line.replace('* ', '') + '</li></ul>'
-        else:
-            html += '<p>' + line + '</p>'
-    return html
-
 def parse_items(items_text):
-    # Remove introductory sentence if it exists
     if ":" in items_text:
         items_text = items_text.split(":", 1)[1]
     return [item.strip() for item in items_text.split(",") if item.strip()]
@@ -60,50 +39,41 @@ def analyze():
         return jsonify({"error": "No image provided"}), 400
 
     image_file = request.files["image"]
-    
-    # Read the image data into memory first
-    image_data = image_file.read()
-    img_pil = PIL.Image.open(BytesIO(image_data))
+    img_pil = Image.open(BytesIO(image_file.read()))
+    if img_pil.mode != "RGB":
+        img_pil = img_pil.convert("RGB")
 
-    # Convert to RGB to ensure compatibility, then save to BytesIO
-    if img_pil.mode != 'RGB':
-        img_pil = img_pil.convert('RGB')
-    
-    
-
-
-    # --- Step 1: Detect items from the fridge image ---
+    # --- Step 1: detect items ---
     try:
-        model = genai.GenerativeModel('gemini-pro-vision')
-        response = model.generate_content(["List all the food items in this fridge image as a comma-separated list.", img_pil])
-        items_text = response.text
-        items_list = parse_items(items_text)
+        model = genai.GenerativeModel("gemini-1.5-flash")
+        response = model.generate_content(
+            ["List all the food items in this fridge image as a comma-separated list.", img_pil]
+        )
+        items_list = parse_items(response.text)
     except Exception as e:
-        logging.error(f"Detection failed: {e}")
-        return jsonify({"error": "Detection failed. See logs for details."}, 500)
+        logging.exception("Detection failed")
+        return jsonify({"error": f"Detection failed: {str(e)}"}), 500
 
     if not items_list:
-        return jsonify({"error": "No items detected in the image."}, 200)
+        return jsonify({"error": "No items detected"}), 200
 
-    # --- Step 2: Generate a recipe based on detected items ---
+    # --- Step 2: recipe suggestion ---
     try:
-        model = genai.GenerativeModel('gemini-pro')
         recipe_prompt = (
             f"You have these ingredients: {', '.join(items_list)}. "
             "Suggest a simple recipe with step-by-step instructions."
         )
-        response = model.generate_content(recipe_prompt)
-        recipe_text = response.text.strip()
-        recipe_html = format_recipe(recipe_text)
+        recipe_response = model.generate_content(recipe_prompt)
+        recipe_text = recipe_response.text.strip()
     except Exception as e:
-        logging.error(f"Recipe generation failed: {e}")
-        return jsonify({"error": "Recipe generation failed. See logs for details."}, 500)
+        logging.exception("Recipe generation failed")
+        return jsonify({"error": f"Recipe generation failed: {str(e)}"}), 500
 
-    return render_template("result.html", items=items_list, recipe=recipe_html)
-
-
+    return jsonify({
+        "detected_items": items_list,
+        "recipe": recipe_text
+    })
 
 if __name__ == "__main__":
-    # Cloud Run expects the port to be set in the PORT environment variable
     port = int(os.environ.get("PORT", 8080))
     app.run(host="0.0.0.0", port=port)

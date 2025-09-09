@@ -177,6 +177,17 @@ CMD ["gunicorn", "--bind", "0.0.0.0:8080", "app:app"]
     ```bash
     gcloud run deploy from-fridge-to-app --image us-central1-docker.pkg.dev/challenge-471312/from-fridge-to-app/from-fridge-to-app --platform managed --region us-central1 --allow-unauthenticated --set-secrets=GEMINI_API_KEY=GEMINI_API_KEY:latest
     ```
+7. ## **Redeploy
+
+```bash
+gcloud builds submit --tag gcr.io/challenge-471312/fromfridgeto
+gcloud run deploy fromfridgeto \
+  --image gcr.io/challenge-471312/fromfridgeto \
+  --platform managed \
+  --region europe-west1 \
+  --allow-unauthenticated \
+  --set-secrets=GEMINI_API_KEY=gemini-api-key:latest
+```
 
 After these steps, your application should be deployed and accessible at the provided Cloud Run URL.
 
