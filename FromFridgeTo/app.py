@@ -16,26 +16,10 @@ logging.basicConfig(level=logging.INFO)
 # Initialize Flask app
 app = Flask(__name__)
 
-def access_secret_version(secret_id, version_id="latest"):
-    """
-    Access the payload for the given secret version if running in GCP.
-    Otherwise, fall back to environment variables.
-    """
-    project_id = os.environ.get("GCP_PROJECT")
-    if project_id:
-        client = secretmanager.SecretManagerServiceClient()
-        name = f"projects/{project_id}/secrets/{secret_id}/versions/{version_id}"
-        response = client.access_secret_version(name=name)
-        return response.payload.data.decode("UTF-8")
-    
-    # Fallback for local development
-    return os.environ.get(secret_id)
-
-
 # Initialize Gemini client
-api_key = access_secret_version("GEMINI_API_KEY")
+api_key = os.environ.get("GEMINI_API_KEY")
 if not api_key:
-    raise ValueError("GEMINI_API_KEY not found in Secret Manager or environment variables.")
+    raise ValueError("GEMINI_API_KEY not found in environment variables.")
 
 genai.configure(api_key=api_key)
 
@@ -85,15 +69,13 @@ def analyze():
     if img_pil.mode != 'RGB':
         img_pil = img_pil.convert('RGB')
     
-    img_byte_arr = BytesIO()
-    img_pil.save(img_byte_arr, format='jpeg') # Changed from PNG to JPEG
-    img_byte_arr = img_byte_arr.getvalue()
+    
 
 
     # --- Step 1: Detect items from the fridge image ---
     try:
         model = genai.GenerativeModel('gemini-pro-vision')
-        response = model.generate_content(["List all the food items in this fridge image as a comma-separated list.", genai.upload_file(img_byte_arr)])
+        response = model.generate_content(["List all the food items in this fridge image as a comma-separated list.", img_pil])
         items_text = response.text
         items_list = parse_items(items_text)
     except Exception as e:
@@ -105,7 +87,7 @@ def analyze():
 
     # --- Step 2: Generate a recipe based on detected items ---
     try:
-        model = genai.GenerativeModel('gemini-pro-vision')
+        model = genai.GenerativeModel('gemini-pro')
         recipe_prompt = (
             f"You have these ingredients: {', '.join(items_list)}. "
             "Suggest a simple recipe with step-by-step instructions."
