@@ -4,14 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frontend Halloween</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <h1>Frontend Halloween</h1>
         <div id="countdown"></div>
-        <img src="public/images/GhostII.png" alt="Ghost with a pumpkin" class="ghost-image">
+        <div class="ghost-container">
+            <div class="ghost">
+                <div class="ghost-eyes"></div>
+                <div class="ghost-mouth"></div>
+            </div>
+            <div class="pumpkin">
+                <div class="pumpkin-stem"></div>
+                <div class="pumpkin-face">
+                    <div class="pumpkin-eye left"></div>
+                    <div class="pumpkin-eye right"></div>
+                    <div class="pumpkin-mouth"></div>
+                </div>
+            </div>
+        </div>
         <a href="trick-or-treat.html">Trick or Treat</a>
+        <audio id="ambient-sound" loop src="sounds/spooky.mp3"></audio>
+        <button id="sound-toggle">Toggle Sound</button>
     </div>
     <script src="app.js"></script>
 </body>
