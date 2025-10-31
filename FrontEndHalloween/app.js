@@ -35,14 +35,14 @@ function calculateTimeLeft() {
 
 function updateCountdown() {
     const timeLeft = calculateTimeLeft();
-
-    countdownElement.innerHTML = `
-        <h2>Countdown to Halloween</h2>
+    const countdownText = `
         <span>${timeLeft.days} days </span>
         <span>${timeLeft.hours} hours </span>
         <span>${timeLeft.minutes} minutes </span>
         <span>${timeLeft.seconds} seconds </span>
     `;
+    countdownElement.innerHTML = countdownText;
+    countdownElement.setAttribute('data-text', countdownElement.innerText);
 }
 
 setInterval(updateCountdown, 1000);

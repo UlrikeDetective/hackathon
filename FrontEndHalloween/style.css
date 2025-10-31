@@ -1,42 +1,135 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
+
 :root {
     --background-color: #121212;
     --text-color: #e0e0e0;
     --primary-color: #ff4500; /* OrangeRed */
     --secondary-color: #9400d3; /* DarkViolet */
-    --accent-color: #00ff00; /* Lime */
+    --accent-color: #0f0; /* Lime green for matrix effect */
 }
 
 body {
-    font-family: 'Creepster', cursive;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    text-align: center;
-    overflow-x: hidden;
+  background: #000;
+  overflow: hidden;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Raleway', sans-serif;
+  color: #fff;
+  font-size: 24px;
 }
 
 .container {
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 1600px;
     padding: 2rem;
     position: relative;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-h1 {
-    font-size: 4rem;
-    color: var(--primary-color);
-    text-shadow: 0 0 10px var(--primary-color);
+.masking-container {
+    /* Add any specific styling for the masking container if needed */
 }
 
-h2 {
-    font-size: 2.5rem;
-    color: var(--secondary-color);
+.masked-text {
+    font-size: 8rem;
+    font-weight: bold;
+    color: transparent;
+    background-image: url('https://images.unsplash.com/photo-1732535725600-f805d8b33c9c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: 200%; /* Enlarged for smooth animation */
+    background-position: 0 50%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-background 5s infinite alternate linear;
 }
 
-#countdown {
-    font-size: 1.5rem;
-    margin: 2rem 0;
-    text-shadow: 0 0 5px var(--text-color);
+@keyframes animate-background {
+    0% {
+        background-position: 0 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+#countdown-matrix-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2; /* Ensure it stays above the rain effect */
+  margin: 2rem 0;
+}
+
+#countdown.matrix-text {
+  color: var(--accent-color);
+  font-size: 3em; /* Increased font size */
+  font-family: monospace;
+  position: relative;
+  text-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color), 0 0 30px var(--accent-color);
+  z-index: 2; /* Ensure it stays above the rain effect */
+}
+
+#countdown.matrix-text::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: glitch 2s infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  transform: translate(-2px, -2px);
+  color: var(--accent-color);
+  text-shadow: 0 0 5px var(--accent-color), 0 0 15px var(--accent-color);
+}
+
+#countdown-matrix-container .rain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 255, 0, 0.1) 0,
+    rgba(0, 255, 0, 0.2) 2px,
+    transparent 4px
+  );
+  animation: rain 10s linear infinite;
+  z-index: 1; /* Place it behind the text */
+}
+
+/* Animation for the rain effect */
+ @keyframes rain {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* Glitch effect for the text */
+ @keyframes glitch {
+  0%, 100% {
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    transform: translate(0);
+  }
+  33% {
+    clip-path: polygon(0 0, 100% 0, 100% 15%, 0 15%);
+    transform: translate(-5px, -5px);
+  }
+  66% {
+    clip-path: polygon(0 85%, 100% 85%, 100% 100%, 0 100%);
+    transform: translate(5px, 5px);
+  }
 }
 
 #countdown span {
@@ -235,8 +328,8 @@ a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 3rem;
+    .masked-text {
+        font-size: 6rem;
     }
 
     .ghost-container {
@@ -245,12 +338,12 @@ a:hover {
 }
 
 @media (max-width: 480px) {
-    h1 {
-        font-size: 2.5rem;
+    .masked-text {
+        font-size: 4rem;
     }
 
-    #countdown {
-        font-size: 1rem;
+    #countdown.matrix-text {
+        font-size: 2em;
     }
 
     .ghost-container {

@@ -11,8 +11,23 @@
 </head>
 <body>
     <div class="container">
-        <h1>Frontend Halloween</h1>
-        <div id="countdown"></div>
+        <div class="masking-container">
+            <h1 class="masked-text">Styled your pumpkin yet?</h1>
+        </div>
+        <div class="content">
+          <div class="marquee">
+            <div class="marquee_blur" aria-hidden="true">
+              <p class="marquee_text">Countdown to Halloween</p>
+            </div>
+            <div class="marquee_clear">
+              <p class="marquee_text">Countdown to Halloween</p>
+            </div>
+          </div>
+        </div>
+        <div class="matrix-container" id="countdown-matrix-container">
+            <div id="countdown" class="matrix-text" data-text=""></div>
+            <div class="rain"></div>
+        </div>
         <div class="ghost-container">
             <div class="ghost">
                 <div class="ghost-eyes"></div>
