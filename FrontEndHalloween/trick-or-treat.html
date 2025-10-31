@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Halloween!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Halloween</h1>
+        <img id="random-image" src="" alt="A Halloween surprise">
+        <a href="index.html">Back</a>
+    </div>
+
+    <script>
+        const images = [
+            'public/images/SkateboardWitch.png',
+            'public/images/SUPWitch_V02.png',
+            'public/images/SUPWitch.png',
+        ];
+
+        const randomImage = images[Math.floor(Math.random() * images.length)];
+        document.getElementById('random-image').src = randomImage;
+    </script>
+</body>
+</html>
