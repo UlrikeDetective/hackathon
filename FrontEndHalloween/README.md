@@ -1,60 +1,84 @@
-## Frontend Challenge: Halloween Edition 🦇
+# Frontend Halloween 🎃
 
-### The Prompts
-#### CSS Art: Halloween
-Create a work of art using primarily CSS! Let Halloween inspire you - jack-o-lanterns, haunted houses, creepy spiders, ghosts or anything else the season brings to mind!
+A creative and beautiful website for the Frontend Challenge: Halloween Edition. This project features a Halloween-themed landing page with a countdown to next Halloween.
 
-Note: We're now allowing a sprinkle of JavaScript in CSS Art submissions! However, judging will continue focus primarily on the CSS component, so keep JavaScript usage light and purposeful. The star of the show should still be your CSS skills.
+See [THEME.md](THEME.md) for details on the challenge prompts and judging criteria.
 
-#### Perfect Landing: Halloween
-Build a polished, functional landing page with a Halloween theme. 
-On the landing page should be a countdown calendar counting the days until the next Halloween. Next to the day count is a ghost with a pumpkin hiding under a bed sheet (for inspiration see images/GhostII.png). At the end of the page have a Halloween styled "Trick or Treat" Link. When clicking on the link it opens a new page with an image from the folder images and the text "Happy Halloween".
-The landing page should imagine and capture the spirit of the season and demonstrates excellent frontend fundamentals.
+When you are ready to submit your project, please use the [SUBMISSION.md](SUBMISSION.md) template.
 
-You may now use JavaScript or any other browser-compatible language/runtime for the Landing page. The finished product should show what modern web development can do.
+## Project Status
 
-#### Judging Criteria
-CSS Art submissions will be evaluated on:
+This project is currently in development.
 
-* Creativity
-* Effective Use of CSS
-* Aesthetic Outcome
+## Features
 
-Perfect Landing submissions will be evaluated on:
+*   Halloween-themed landing page
+*   Countdown calendar to next Halloween
+*   "Trick or Treat" link that reveals a surprise image
 
-* Accessibility
-* Usability and User Experience
-* Creativity
-* Code quality
+## Getting Started
 
-#### Submission templet (please fill out when project is finished)
-_This is a submission for [Frontend Challenge - Halloween Edition, Perfect Landing](https://dev.to/challenges/frontend-2025-10-15)_
+### Prerequisites
 
-#### Steps
+*   Node.js >=20.0.0
+*   npm >=10.0.0
 
-* virtual enviroment
-* create a gitignore
+### Installation
 
-python3 -m venv venv
-source venv/bin/activate
+1.  Clone the repository:
+    ```bash
+    git clone https://github.com/your-username/frontend-halloween.git
+    ```
+2.  Navigate to the project directory:
+    ```bash
+    cd frontend-halloween
+    ```
+3.  Install the dependencies:
+    ```bash
+    npm install
+    ```
 
-## What I Built
+## Usage
 
-<!-- Tell us about your landing page and the Halloween theme you chose. -->
+To start the local development server, run the following command:
 
-## Demo
-<!-- Show us your project! You can embed your project using: -->
-<!-- Google Cloud Run: `{% embed cloud_run_link %}` -->
-<!-- CodePen: `{% codepen https://... %}` -->
-<!-- Or share an image of your project with a direct link to the live demo. -->
+```bash
+npm run dev
+```
 
-## Journey
-<!-- Tell us about your process, what you learned, anything you are particularly proud of, what you hope to do next, etc. -->
+The application will be available at `http://localhost:5173` (or the next available port).
 
-<!-- Team Submissions: Please pick one member to publish the submission and credit teammates by listing their DEV usernames directly in the body of the post. -->
+## Building the Project
 
-<!-- We encourage you to consider adding a license for your code. -->
+To create a production-ready build, run:
 
-<!-- Don't forget to add a cover image to your post (if you want). -->
+```bash
+npm run build
+```
 
-<!-- Thanks for participating! -->
+The compiled assets will be placed in the `dist` directory.
+
+## Documentation
+
+User-facing documentation is available in the `docs` directory. To open it, run:
+
+```bash
+npm run open-docs
+```
+
+## Contributing
+
+Contributions are welcome! Please follow these steps to contribute:
+
+1.  Fork the repository.
+2.  Create a new branch (`git checkout -b feature/your-feature-name`).
+3.  Make your changes.
+4.  Commit your changes (`git commit -m 'Add some feature'`).
+5.  Push to the branch (`git push origin feature/your-feature-name`).
+6.  Open a pull request.
+
+Please make sure to update tests as appropriate.
+
+## License
+
+This project is licensed under the MIT License.
