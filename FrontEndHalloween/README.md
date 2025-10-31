@@ -30,6 +30,14 @@ Perfect Landing submissions will be evaluated on:
 #### Submission templet (please fill out when project is finished)
 _This is a submission for [Frontend Challenge - Halloween Edition, Perfect Landing](https://dev.to/challenges/frontend-2025-10-15)_
 
+#### Steps
+
+* virtual enviroment
+* create a gitignore
+
+python3 -m venv venv
+source venv/bin/activate
+
 ## What I Built
 
 <!-- Tell us about your landing page and the Halloween theme you chose. -->
