@@ -33,7 +33,7 @@ You may now use JavaScript or any other browser-compatible language/runtime for 
 ### to do
 - use matrix css style for countdown
 - reduce the font size of everything but "trick or treat"
-- add a section 'to do list' for tricks and treats
+- add a section 'to do list' for tricks and treats.
 - add a footer with an impressum
 - change the font in trick-or-treat.html
 - work on the ghost
