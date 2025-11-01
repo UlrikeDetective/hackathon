@@ -18,7 +18,7 @@ body {
   font-family: monospace;
   color: #fff;
   font-size: 20px;
-  padding-bottom: 120px; /* Increased space for the fixed footer */
+  padding-bottom: 150px; /* Increased space for the fixed footer */
 }
 
 
@@ -542,4 +542,11 @@ p {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+#random-image {
+    width: 60%;
+    height: auto;
+    display: block; /* Ensures proper centering and sizing */
+    margin: 2rem auto; /* Centers the image */
 }
