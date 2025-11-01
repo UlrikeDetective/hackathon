@@ -9,10 +9,8 @@
 }
 
 body {
-  background: #373434;
-  overflow: hidden;
+  background: #4c3a0f;
   margin: 0;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,7 +36,7 @@ body {
 }
 
 .masked-text {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: bold;
     color: transparent;
     background-image: url('https://images.unsplash.com/photo-1732535725600-f805d8b33c9c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
@@ -170,9 +168,9 @@ a:hover {
     background: #fff;
     border-radius: 75px 75px 0 0;
     position: absolute;
-    bottom: 50px;
+    bottom: 70px;
     left: 25px;
-    animation: float 3s ease-in-out infinite;
+    animation: float 5s ease-in-out infinite;
     cursor: pointer;
 }
 
@@ -180,9 +178,9 @@ a:hover {
 .ghost::after {
     content: '';
     position: absolute;
-    bottom: -25px;
-    width: 25px;
-    height: 25px;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
     background: #fff;
     border-radius: 50%;
 }
@@ -292,8 +290,8 @@ a:hover {
     0%, 100% {
         transform: translateY(0);
     }
-    50% {
-        transform: translateY(-20px);
+    70% {
+        transform: translateY(-50px);
     }
 }
 
@@ -330,7 +328,7 @@ a:hover {
 /* Responsive Design */
 @media (max-width: 768px) {
     .masked-text {
-        font-size: 6rem;
+        font-size: 3rem;
     }
 
     .ghost-container {
@@ -340,11 +338,11 @@ a:hover {
 
 @media (max-width: 480px) {
     .masked-text {
-        font-size: 4rem;
+        font-size: 3rem;
     }
 
     #countdown.matrix-text {
-        font-size: 2em;
+        font-size: 1.8em;
     }
 
     .ghost-container {
