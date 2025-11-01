@@ -4,8 +4,8 @@ const pumpkinEyes = document.querySelectorAll('.pumpkin-eye');
 const ambientSound = document.getElementById('ambient-sound');
 const soundToggleButton = document.getElementById('sound-toggle');
 const easterEggElement = document.createElement('div');
-easterEggElement.className = 'easter-egg';
-easterEggElement.innerHTML = '<h1>BOO!</h1>';
+eşasterEggElement.className = 'easter-egg';
+eşasterEggElement.innerHTML = '<h1>BOO!</h1>';
 document.body.appendChild(easterEggElement);
 
 // Countdown
@@ -43,10 +43,89 @@ function updateCountdown() {
     `;
     countdownElement.innerHTML = countdownText;
     countdownElement.setAttribute('data-text', countdownElement.innerText);
+    highlightToDoItem(timeLeft.days);
 }
 
 setInterval(updateCountdown, 1000);
 updateCountdown();
+
+// To-Do List
+const todoListContainer = document.querySelector('.todo-list');
+
+function parseToDoList(text) {
+    const blocks = text.split('**Day');
+    let html = '';
+    for (const block of blocks) {
+        if (block.trim() === '' || block.trim().startsWith('"**Halloween Countdown:')) continue;
+
+        const lines = block.trim().split('\n');
+        const dayLine = lines.shift().replace(/\*\*/g, '').trim();
+        const dayMatch = dayLine.match(/(\d+)/);
+        const dayNumber = dayMatch ? parseInt(dayMatch[0], 10) : (dayLine.includes('HALLOWEEN') ? 0 : null);
+
+        if (dayNumber !== null) {
+            let listItems = '';
+            for (const line of lines) {
+                const trimmedLine = line.trim();
+                if (trimmedLine.startsWith('- ')) {
+                    listItems += `<li>${trimmedLine.substring(2)}</li>`;
+                } else if (trimmedLine) {
+                    listItems += `<p>${trimmedLine}</p>`;
+                }
+            }
+
+            html += `
+                <div class="todo-item" data-day="${dayNumber}">
+                    <h3>Day ${dayLine}</h3>
+                    <ul>${listItems}</ul>
+                </div>
+            `;
+        }
+    }
+    return html;
+}
+
+
+async function loadToDoList() {
+    try {
+        const response = await fetch('docs/halloweenToDoList.txt');
+        const text = await response.text();
+        if (todoListContainer) {
+            todoListContainer.innerHTML = parseToDoList(text);
+        }
+    } catch (error) {
+        console.error('Error loading to-do list:', error);
+        if (todoListContainer) {
+            todoListContainer.innerHTML = '<p>Could not load the to-do list.</p>';
+        }
+    }
+}
+
+function highlightToDoItem(currentDays) {
+    const todoItems = document.querySelectorAll('.todo-item');
+    let closestItem = null;
+    let minDiff = Infinity;
+
+    todoItems.forEach(item => {
+        item.classList.remove('highlight');
+        const day = parseInt(item.dataset.day, 10);
+        if (!isNaN(day)) {
+            const diff = day - currentDays;
+            if (diff >= 0 && diff < minDiff) {
+                minDiff = diff;
+                closestItem = item;
+            }
+        }
+    });
+
+    if (closestItem) {
+        closestItem.classList.add('highlight');
+        closestItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+}
+
+
+loadToDoList();
 
 // Ghost interaction
 ghost.addEventListener('click', () => {
