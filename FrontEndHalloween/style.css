@@ -14,7 +14,6 @@ body {
   margin-bottom: 50;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   font-family: monospace;
   color: #fff;
@@ -530,4 +529,17 @@ footer a:hover {
 
 p {
     font-size: 0.5em!;
+}
+
+#sound-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 101;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }

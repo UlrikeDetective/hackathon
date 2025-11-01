@@ -137,13 +137,17 @@ ghost.addEventListener('click', () => {
 });
 
 // Sound
+ambientSound.play().catch(() => {
+    // Autoplay was prevented.
+});
+
 soundToggleButton.addEventListener('click', () => {
-    if (ambientSound.paused) {
-        ambientSound.play();
-        soundToggleButton.textContent = 'Pause Sound';
-    } else {
+    if (!ambientSound.paused) {
         ambientSound.pause();
         soundToggleButton.textContent = 'Play Sound';
+    } else {
+        ambientSound.play();
+        soundToggleButton.textContent = 'Stop Sound';
     }
 });
 
