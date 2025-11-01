@@ -4,8 +4,8 @@ const pumpkinEyes = document.querySelectorAll('.pumpkin-eye');
 const ambientSound = document.getElementById('ambient-sound');
 const soundToggleButton = document.getElementById('sound-toggle');
 const easterEggElement = document.createElement('div');
-eşasterEggElement.className = 'easter-egg';
-eşasterEggElement.innerHTML = '<h1>BOO!</h1>';
+easterEggElement.className = 'easter-egg';
+easterEggElement.innerHTML = '<h1>BOO!</h1>';
 document.body.appendChild(easterEggElement);
 
 // Countdown
