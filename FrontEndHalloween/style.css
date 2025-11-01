@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
 
 :root {
-    --background-color: #121212;
+    --background-color: #4c3a0f;
     --text-color: #e0e0e0;
     --primary-color: #ff4500; /* OrangeRed */
     --secondary-color: #9400d3; /* DarkViolet */
@@ -10,7 +10,8 @@
 
 body {
   background: #4c3a0f;
-  margin: 0;
+  margin: 10;
+  margin-bottom: 50;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,12 +19,13 @@ body {
   font-family: monospace;
   color: #fff;
   font-size: 20px;
+  padding-bottom: 120px; /* Increased space for the fixed footer */
 }
 
 
 .container {
     max-width: 1200px;
-    padding: 2rem;
+    padding: 3rem;
     position: relative;
     z-index: 2;
     display: flex;
@@ -407,7 +409,7 @@ a:hover {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 80%;
     background-image: url('https://www.transparenttextures.com/patterns/old-paper.png');
     opacity: 0.5;
     pointer-events: none;
@@ -418,7 +420,7 @@ a:hover {
     font-family: monospace;
     font-size: 1.2rem;
     color: #8b4513;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 .todo-list {
@@ -496,4 +498,36 @@ a:hover {
     100% {
         transform: translateX(100%);
     }
+}
+
+/* Footer */
+footer {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 0.3rem; /* Reduced padding */
+    position: fixed;
+    margin-top: 70;
+    border-top: 10;
+    bottom: 0;
+    width: 100%;
+    z-index: 800;
+    font-size: 0.8rem;
+}
+
+footer p {
+    margin: 0.2rem 0; /* Reduced margin */
+}
+
+footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+p {
+    font-size: 0.5em!;
 }

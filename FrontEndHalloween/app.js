@@ -120,7 +120,6 @@ function highlightToDoItem(currentDays) {
 
     if (closestItem) {
         closestItem.classList.add('highlight');
-        closestItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 }
 
@@ -199,3 +198,6 @@ for (let i = 1; i <= 3; i++) {
     parallaxContainer.appendChild(layer);
 }
 document.body.insertBefore(parallaxContainer, document.querySelector('.container'));
+
+// Dynamic Year
+document.getElementById('year').textContent = new Date().getFullYear();

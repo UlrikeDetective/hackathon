@@ -15,6 +15,9 @@ This project is currently in development.
 *   Halloween-themed landing page
 *   Countdown calendar to next Halloween
 *   "Trick or Treat" link that reveals a surprise image
+*   A scrollable to-do list that highlights the current date
+*   An animated ghost and pumpkin
+*   A dynamic fog/cloud effect
 
 ## Getting Started
 

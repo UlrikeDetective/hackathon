@@ -29,14 +29,28 @@ You may now use JavaScript or any other browser-compatible language/runtime for 
 *   Creativity
 *   Code quality
 
+## Color Palette
+
+*   **Background**: `#4c3a0f`
+*   **Primary Color (OrangeRed)**: `var(--primary-color)` - `#ff4500`
+*   **Secondary Color (DarkViolet)**: `var(--secondary-color)` - `#9400d3`
+*   **Accent Color (Lime Green)**: `var(--accent-color)` - `#0f0`
+*   **Text Color**: `var(--text-color)` - `#e0e0e0`
+*   **To-Do List Background**: `#f5deb3` (Wheat)
+*   **To-Do List Border**: `#8b4513` (SaddleBrown)
+
+## Styling Guidelines
+
+*   **Fonts**: The project uses 'Creepster' for headings and `monospace` for the body text.
+*   **Animations**: The project features several animations, including a "Matrix" style countdown, a floating ghost, a glowing pumpkin, and a dynamic cloud effect.
+*   **Layout**: The main layout is centered, with a flexbox container for the ghost and to-do list to appear side-by-side on larger screens.
 
 ### to do
 - use matrix css style for countdown
-- reduce the font size of everything but "trick or treat"
 - create the 'to do list'. - check
-- add a section 'to do list'.
+- add a section 'to do list'. - check
 - add a footer with an impressum
 - change the font in trick-or-treat.html
-- work on the ghost
+- work on the ghost - check
 - work on overall styling. Make it more modern, tech savy and cool, think of Wednesday Adams meet the Matrix.
 - add Backend - sqllite on the trick-or-treat.html where users can put their trick or treats in
