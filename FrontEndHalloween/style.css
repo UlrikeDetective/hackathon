@@ -9,7 +9,7 @@
 }
 
 body {
-  background: #000;
+  background: #373434;
   overflow: hidden;
   margin: 0;
   height: 100vh;
@@ -19,12 +19,12 @@ body {
   align-items: center;
   font-family: monospace;
   color: #fff;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 
 .container {
-    max-width: 1600px;
+    max-width: 1200px;
     padding: 2rem;
     position: relative;
     z-index: 2;
@@ -380,7 +380,7 @@ a:hover {
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
     position: relative;
     color: #3a2f2f;
-    font-family: 'Garamond', serif;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 #todo-list-container::before {
@@ -397,8 +397,8 @@ a:hover {
 
 #todo-list-container h2 {
     text-align: center;
-    font-family: 'Creepster', cursive;
-    font-size: 2.5rem;
+    font-family: monospace;
+    font-size: 1.2rem;
     color: #8b4513;
     margin-bottom: 1rem;
 }
@@ -419,7 +419,7 @@ a:hover {
 
 .todo-item h3 {
     margin: 0 0 0.5rem 0;
-    font-family: 'Creepster', cursive;
+    font-family: 'Courier New', Courier, monospace;
     color: #5a3a1a;
 }
 
