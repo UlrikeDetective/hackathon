@@ -28,3 +28,14 @@ You may now use JavaScript or any other browser-compatible language/runtime for 
 *   Usability and User Experience
 *   Creativity
 *   Code quality
+
+
+### to do
+- use matrix css style for countdown
+- reduce the font size of everything but "trick or treat"
+- add a section 'to do list' for tricks and treats
+- add a footer with an impressum
+- change the font in trick-or-treat.html
+- work on the ghost
+- work on overall styling. Make it more modern, tech savy and cool, think of Wednesday Adams meet the Matrix.
+- add Backend - sqllite on the trick-or-treat.html where users can put their trick or treats in
