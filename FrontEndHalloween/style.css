@@ -373,14 +373,34 @@ a:hover {
     border-radius: 10px;
     padding: 1.5rem;
     margin: 2rem 0;
-    width: 80%;
+    width: 50%; /* Adjusted width for flex layout */
     max-width: 800px;
     height: 400px;
     overflow-y: scroll;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
     position: relative;
     color: #3a2f2f;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Garamond', serif;
+}
+
+.flex-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the top */
+    gap: 2rem; /* Space between the ghost and the to-do list */
+    width: 100%;
+    max-width: 1600px; /* Match container max-width */
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .flex-section {
+        flex-direction: column; /* Stack vertically on smaller screens */
+        align-items: center;
+    }
+    #todo-list-container {
+        width: 80%; /* Adjust width for stacked layout */
+    }
 }
 
 #todo-list-container::before {
