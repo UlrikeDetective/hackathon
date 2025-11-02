@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scary Spiderweb</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #0a0a0a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .web-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            animation: grow 4s linear infinite;
+        }
+
+        .web-line {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 2px;
+            transform-origin: center;
+        }
+
+        .spider {
+            position: absolute;
+            width: 50px;
+            height: 30px;
+            bottom: 10%;
+            left: 10%;
+            z-index: 10;
+        }
+
+        .spider-body {
+            position: absolute;
+            width: 30px;
+            height: 20px;
+            background-color: #333;
+            border-radius: 50%;
+            top: 0;
+            left: 10px;
+        }
+
+        .spider-leg {
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: #333;
+            transform-origin: 0 0;
+        }
+
+        .spider-leg:nth-child(1) {
+            top: 10px;
+            left: 5px;
+            transform: rotate(30deg);
+        }
+
+        .spider-leg:nth-child(2) {
+            top: 15px;
+            left: 5px;
+            transform: rotate(0deg);
+        }
+
+        .spider-leg:nth-child(3) {
+            top: 20px;
+            left: 5px;
+            transform: rotate(-30deg);
+        }
+
+        .spider-leg:nth-child(4) {
+            top: 10px;
+            left: 35px;
+            transform: rotate(150deg);
+        }
+
+        .spider-leg:nth-child(5) {
+            top: 15px;
+            left: 35px;
+            transform: rotate(180deg);
+        }
+
+        .spider-leg:nth-child(6) {
+            top: 20px;
+            left: 35px;
+            transform: rotate(210deg);
+        }
+
+        .eye {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background-color: #4CAF50;
+            border-radius: 50%;
+            top: 5px;
+            animation: blink 3s infinite;
+        }
+
+        .eye.left {
+            left: 40px;
+        }
+
+        .eye.right {
+            left: 55px;
+        }
+
+        @keyframes grow {
+            0% {
+                transform: scale(0.3);
+                opacity: 0.7;
+            }
+            50% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(0.3);
+                opacity: 0.7;
+            }
+        }
+
+        @keyframes blink {
+            0%, 45%, 55%, 100% {
+                height: 12px;
+            }
+            50% {
+                height: 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="web-container">
+            <!-- Spiderweb lines -->
+            <div class="web-line" style="width: 2px; height: 100%; left: 50%; top: 0;"></div>
+            <div class="web-line" style="width: 100%; height: 2px; left: 0; top: 50%;"></div>
+            <div class="web-line" style="width: 2px; height: 100%; left: 25%; top: 0; transform: rotate(45deg);"></div>
+            <div class="web-line" style="width: 2px; height: 100%; left: 75%; top: 0; transform: rotate(-45deg);"></div>
+            <div class="web-line" style="width: 2px; height: 100%; left: 0; top: 25%; transform: rotate(90deg);"></div>
+            <div class="web-line" style="width: 2px; height: 100%; left: 100%; top: 25%; transform: rotate(90deg);"></div>
+            <div class="web-line" style="width: 2px; height: 100%; left: 12.5%; top: 12.5%; transform: rotate(67.5deg);"></div>
+            <div class="web-line" style="width: 2px; height: 100%; left: 87.5%; top: 12.5%; transform: rotate(-67.5deg);"></div>
+            <div class="web-line" style="width: 2px; height: 100%; left: 12.5%; top: 87.5%; transform: rotate(22.5deg);"></div>
+            <div class="web-line" style="width: 2px; height: 100%; left: 87.5%; top: 87.5%; transform: rotate(-22.5deg);"></div>
+        </div>
+        <div class="spider">
+            <div class="spider-body"></div>
+            <div class="spider-leg"></div>
+            <div class="spider-leg"></div>
+            <div class="spider-leg"></div>
+            <div class="spider-leg"></div>
+            <div class="spider-leg"></div>
+            <div class="spider-leg"></div>
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+        </div>
+    </div>
+</body>
+</html>
