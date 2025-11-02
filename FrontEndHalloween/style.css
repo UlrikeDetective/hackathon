@@ -356,8 +356,8 @@ a:hover {
 
 /* To-Do List */
 #todo-list-container {
-    background-color: var(--text-color); /* Wheat color for old paper */
-    border: 2px solid var(--border-color); /* SaddleBrown border */
+    background-color: rgba(25, 25, 50, 0.7); /* Semi-transparent Midnight Blue */
+    border: 2px solid var(--border-color);
     border-radius: 10px;
     padding: 1.5rem;
     margin: 2rem 0;
@@ -367,47 +367,19 @@ a:hover {
     overflow-y: scroll;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
     position: relative;
-    color: var(--background-color);
+    color: var(--text-color);
     font-family: 'Garamond', serif;
 }
 
-.flex-section {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Align items to the top */
-    gap: 2rem; /* Space between the ghost and the to-do list */
-    width: 100%;
-    max-width: 1600px; /* Match container max-width */
-    margin-top: 2rem;
-}
-
-@media (max-width: 768px) {
-    .flex-section {
-        flex-direction: column; /* Stack vertically on smaller screens */
-        align-items: center;
-    }
-    #todo-list-container {
-        width: 80%; /* Adjust width for stacked layout */
-    }
-}
-
 #todo-list-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 80%;
-    background-image: url('https://www.transparenttextures.com/patterns/old-paper.png');
-    opacity: 0.5;
-    pointer-events: none;
+    content: none; /* Removed old paper texture */
 }
 
 #todo-list-container h2 {
     text-align: center;
     font-family: monospace;
     font-size: 1.2rem;
-    color: var(--background-color);
+    color: var(--primary-color);
     margin-bottom: 2rem;
 }
 
@@ -418,7 +390,7 @@ a:hover {
 }
 
 .todo-item {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(8, 120, 100, 0.2); /* Semi-transparent Peacock Green */
     border-left: 5px solid var(--border-color);
     padding: 1rem;
     border-radius: 5px;
@@ -428,7 +400,7 @@ a:hover {
 .todo-item h3 {
     margin: 0 0 0.5rem 0;
     font-family: 'Courier New', Courier, monospace;
-    color: var(--background-color);
+    color: var(--text-color);
 }
 
 .todo-item ul {
@@ -437,7 +409,7 @@ a:hover {
 }
 
 .todo-item.highlight {
-    background-color: rgba(235, 220, 178, 0.8); /* Moccasin */
+    background-color: rgba(153, 51, 51, 0.8); /* Semi-transparent Coral Rouge */
     border-left-color: var(--primary-color);
     transform: scale(1.02);
 }
