@@ -25,7 +25,7 @@ body {
 
 .container {
     max-width: 1200px;
-    padding: 3rem;
+    padding: 1rem;
     position: relative;
     z-index: 2;
     display: flex;
@@ -34,7 +34,7 @@ body {
 }
 
 .masking-container {
-    /* Add any specific styling for the masking container if needed */
+    margin-bottom: 2rem;
 }
 
 .masked-text {
@@ -495,7 +495,7 @@ footer {
     text-align: center;
     padding: 0.3rem; /* Reduced padding */
     position: fixed;
-    margin-top: 70;
+    margin-top: 4rem;
     border-top: 10;
     bottom: 0;
     width: 100%;
@@ -542,9 +542,12 @@ p {
 
 /* Spiderweb and Spider CSS */
 .web-container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+    position: fixed; /* Changed to fixed */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    z-index: -1; /* Behind other content */
     animation: grow 8s linear infinite;
 }
 
@@ -555,6 +558,23 @@ p {
     transform-origin: center;
     opacity: 0;
 }
+
+.web-line:nth-child(1) { width: 2px; height: 100%; left: 50%; top: 0; animation: appear 0.5s linear 0.5s forwards; }
+.web-line:nth-child(2) { width: 100%; height: 2px; left: 0; top: 50%; animation: appear 0.5s linear 1s forwards; }
+.web-line:nth-child(3) { width: 2px; height: 100%; left: 25%; top: 0; transform: rotate(45deg); animation: appear 0.5s linear 1.5s forwards; }
+.web-line:nth-child(4) { width: 2px; height: 100%; left: 75%; top: 0; transform: rotate(-45deg); animation: appear 0.5s linear 2s forwards; }
+.web-line:nth-child(5) { width: 2px; height: 100%; left: 0; top: 25%; transform: rotate(90deg); animation: appear 0.5s linear 2.5s forwards; }
+.web-line:nth-child(6) { width: 2px; height: 100%; left: 100%; top: 25%; transform: rotate(90deg); animation: appear 0.5s linear 3s forwards; }
+.web-line:nth-child(7) { width: 2px; height: 100%; left: 12.5%; top: 12.5%; transform: rotate(67.5deg); animation: appear 0.5s linear 3.5s forwards; }
+.web-line:nth-child(8) { width: 2px; height: 100%; left: 87.5%; top: 12.5%; transform: rotate(-67.5deg); animation: appear 0.5s linear 4s forwards; }
+.web-line:nth-child(9) { width: 2px; height: 100%; left: 12.5%; top: 87.5%; transform: rotate(22.5deg); animation: appear 0.5s linear 4.5s forwards; }
+.web-line:nth-child(10) { width: 2px; height: 100%; left: 87.5%; top: 87.5%; transform: rotate(-22.5deg); animation: appear 0.5s linear 5s forwards; }
+.web-line:nth-child(11) { width: 2px; height: 100%; left: 5%; top: 5%; transform: rotate(33.75deg); animation: appear 0.5s linear 5.5s forwards; }
+.web-line:nth-child(12) { width: 2px; height: 100%; left: 95%; top: 5%; transform: rotate(-33.75deg); animation: appear 0.5s linear 6s forwards; }
+.web-line:nth-child(13) { width: 2px; height: 100%; left: 5%; top: 95%; transform: rotate(-33.75deg); animation: appear 0.5s linear 6.5s forwards; }
+.web-line:nth-child(14) { width: 2px; height: 100%; left: 95%; top: 95%; transform: rotate(33.75deg); animation: appear 0.5s linear 7s forwards; }
+.web-line:nth-child(15) { width: 2px; height: 100%; left: 50%; top: 0; transform: rotate(11.25deg); animation: appear 0.5s linear 7.5s forwards; }
+.web-line:nth-child(16) { width: 2px; height: 100%; left: 50%; top: 0; transform: rotate(-11.25deg); animation: appear 0.5s linear 8s forwards; }
 
 .spider {
     position: absolute;
