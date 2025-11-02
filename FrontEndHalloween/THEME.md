@@ -31,13 +31,11 @@ You may now use JavaScript or any other browser-compatible language/runtime for 
 
 ## Color Palette
 
-*   **Background**: `#4c3a0f`
-*   **Primary Color (OrangeRed)**: `var(--primary-color)` - `#ff4500`
-*   **Secondary Color (DarkViolet)**: `var(--secondary-color)` - `#9400d3`
-*   **Accent Color (Lime Green)**: `var(--accent-color)` - `#0f0`
-*   **Text Color**: `var(--text-color)` - `#e0e0e0`
-*   **To-Do List Background**: `#f5deb3` (Wheat)
-*   **To-Do List Border**: `#8b4513` (SaddleBrown)
+*   **Primary/Background (Midnight Blue)**: `#191932`
+*   **Secondary/Text (Champagne Gold)**: `#EBDCB2`
+*   **Accent 1/Highlight (Peacock Green)**: `#087864`
+*   **Accent 2/Borders (Jet Black)**: `#0A0A0A`
+*   **Subtle Pop/Hover (Coral Rouge)**: `#993333`
 
 ## Styling Guidelines
 

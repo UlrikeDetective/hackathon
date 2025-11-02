@@ -120,6 +120,7 @@ function highlightToDoItem(currentDays) {
 
     if (closestItem) {
         closestItem.classList.add('highlight');
+        closestItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 }
 
@@ -191,17 +192,7 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Create parallax layers
-const parallaxContainer = document.createElement('div');
-parallaxContainer.className = 'parallax';
-for (let i = 1; i <= 3; i++) {
-    const layer = document.createElement('div');
-    layer.className = 'parallax-layer';
-    layer.style.backgroundImage = `url('public/images/parallax${i}.png')`;
-    layer.setAttribute('data-speed', i * 0.1);
-    parallaxContainer.appendChild(layer);
-}
-document.body.insertBefore(parallaxContainer, document.querySelector('.container'));
+document.body.style.backgroundColor = '#1a1a1a';
 
 // Dynamic Year
 document.getElementById('year').textContent = new Date().getFullYear();

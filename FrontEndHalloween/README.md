@@ -17,7 +17,8 @@ This project is currently in development.
 *   "Trick or Treat" link that reveals a surprise image
 *   A scrollable to-do list that highlights the current date
 *   An animated ghost and pumpkin
-*   A dynamic fog/cloud effect
+*   A solid background color
+*   A new, darker color palette for a more modern and spooky feel
 *   Sticky footer with dynamic copyright year and project information
 *   Autoplaying ambient sound with a toggle button
 *   Adjusted image size on the "Trick or Treat" page
