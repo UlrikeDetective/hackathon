@@ -12,16 +12,16 @@ This project is currently in development.
 
 ## Features
 
-*   Halloween-themed landing page
+*   Halloween-themed landing page with a cleaner layout and improved spacing
 *   Countdown calendar to next Halloween
-*   "Trick or Treat" link that reveals a surprise image
-*   A scrollable to-do list that highlights the current date
+*   "Trick or Treat" link that reveals a surprise, now featuring a cocktail animation alongside a random image
+*   A scrollable to-do list that highlights the current date, restyled to fit the overall theme and with improved scrolling behavior
 *   An animated ghost and pumpkin
 *   A solid background color
 *   A new, darker color palette for a more modern and spooky feel
-*   Sticky footer with dynamic copyright year and project information
+*   Refactored spiderweb with styles moved to CSS for better maintainability
+*   Sticky footer with dynamic copyright year and project information, with a restyled, visible link
 *   Autoplaying ambient sound with a toggle button
-*   Adjusted image size on the "Trick or Treat" page
 
 ## Getting Started
 
