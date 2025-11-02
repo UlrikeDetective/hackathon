@@ -480,8 +480,12 @@ footer p {
 }
 
 footer a {
-    color: var(--primary-color);
+    color: var(--text-color);
     text-decoration: none;
+    background-color: transparent;
+    padding: 0;
+    font-size: inherit;
+    margin-top: 0;
 }
 
 footer a:hover {
