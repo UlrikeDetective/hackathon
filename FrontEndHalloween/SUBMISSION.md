@@ -17,7 +17,10 @@ The main features include:
 
 ## Demo
 
-_Please add a screenshot of your project here and a link to the live demo._
+![Screenshot](docs/screenshot.png)
+
+Check out the [Live Demo](https://ulrikedetective.github.io/UlrikeHerold/Halloween/index.html)!
+
 
 ## Journey
 
