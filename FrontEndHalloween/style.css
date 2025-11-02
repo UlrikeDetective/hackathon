@@ -4,8 +4,7 @@
     --background-color: #191932;
     --text-color: #EBDCB2;
     --primary-color: #087864;
--   --secondary-color: #993333;
-+   --secondary-color: #993333;
+    --secondary-color: #993333;
     --accent-color: #087864;
     --border-color: #0A0A0A;
 }
@@ -166,135 +165,123 @@ a:hover {
 }
 
 .ghost {
+    position: absolute;
     width: 150px;
     height: 200px;
-    background: #fff;
-    border-radius: 75px 75px 0 0;
-    position: absolute;
-    bottom: 70px;
-    left: 25px;
-    animation: float 5s ease-in-out infinite;
-    cursor: pointer;
+    background-color: rgba(200, 200, 255, 0.7);
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 20px 10px rgba(200, 200, 255, 0.5);
+    animation: float 6s ease-in-out infinite;
+    z-index: 10;
 }
 
 .ghost::before,
 .ghost::after {
     content: '';
     position: absolute;
-    bottom: -50px;
-    width: 50px;
-    height: 50px;
-    background: #fff;
+    width: 30px;
+    height: 30px;
+    background-color: white;
     border-radius: 50%;
+    top: 40px;
 }
 
 .ghost::before {
-    left: 25px;
-}
-
-.ghost::after {
-    right: 25px;
-}
-
-.ghost-eyes {
-    position: absolute;
-    top: 60px;
-    width: 100%;
-    height: 20px;
-}
-
-.ghost-eyes::before,
-.ghost-eyes::after {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: #000;
-    border-radius: 50%;
-}
-
-.ghost-eyes::before {
-    left: 30px;
-}
-
-.ghost-eyes::after {
-    right: 30px;
-}
-
-.ghost-mouth {
-    position: absolute;
-    top: 90px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 30px;
-    height: 15px;
-    background: #000;
-    border-radius: 0 0 15px 15px;
-}
-
-.pumpkin {
-    width: 100px;
-    height: 80px;
-    background: var(--primary-color);
-    border-radius: 50%;
-    position: absolute;
-    bottom: 0;
-    left: 50px;
-    animation: pumpkin-glow 2s ease-in-out infinite;
-}
-
-.pumpkin-stem {
-    width: 15px;
-    height: 20px;
-    background: #654321;
-    position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.pumpkin-face {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.pumpkin-eye {
-    position: absolute;
-    top: 20px;
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 15px solid #000;
-}
-
-.pumpkin-eye.left {
     left: 20px;
 }
 
-.pumpkin-eye.right {
+.ghost::after {
     right: 20px;
 }
 
-.pumpkin-mouth {
+.ghost .eye {
     position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 15px;
+    height: 15px;
+    background-color: black;
+    border-radius: 50%;
+    top: 50px;
+}
+
+.ghost .eye.left {
+    left: 35px;
+}
+
+.ghost .eye.right {
+    right: 35px;
+}
+
+.ghost .mouth {
+    position: absolute;
     width: 40px;
     height: 20px;
-    background: #000;
-    border-radius: 0 0 20px 20px;
+    border-bottom: 5px solid black;
+    border-radius: 0 0 50% 50% / 0 0 100% 100%;
+    bottom: 120px;
+    left: 55px;
+}
+
+.pumpkin {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #FF7518;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    animation: blink 3s infinite;
+}
+
+.pumpkin::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 30px;
+    background-color: black;
+    border-radius: 50%;
+    top: 25px;
+    left: 20px;
+}
+
+.pumpkin::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 30px;
+    background-color: black;
+    border-radius: 50%;
+    top: 25px;
+    right: 20px;
+}
+
+.pumpkin .mouth {
+    position: absolute;
+    width: 50px;
+    height: 25px;
+    border-bottom: 6px solid black;
+    border-radius: 0 0 50% 50% / 0 0 100% 100%;
+    bottom: 20px;
+    left: 25px;
 }
 
 /* Animations */
 @keyframes float {
     0%, 100% {
-        transform: translateY(0);
+        left: 10%;
+        top: 20%;
     }
-    70% {
-        transform: translateY(-50px);
+    25% {
+        left: 80%;
+        top: 30%;
+    }
+    50% {
+        left: 50%;
+        top: 70%;
+    }
+    75% {
+        left: 20%;
+        top: 50%;
     }
 }
 
@@ -551,4 +538,153 @@ p {
     height: auto;
     display: block; /* Ensures proper centering and sizing */
     margin: 2rem auto; /* Centers the image */
+}
+
+/* Spiderweb and Spider CSS */
+.web-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: grow 8s linear infinite;
+}
+
+.web-line {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 2px;
+    transform-origin: center;
+    opacity: 0;
+}
+
+.spider {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    bottom: 10%;
+    left: 10%;
+    z-index: 10;
+}
+
+.spider-body {
+    position: absolute;
+    width: 30px;
+    height: 20px;
+    background-color: #333;
+    border-radius: 50%;
+    top: 10px;
+    left: 10px;
+}
+
+.spider-leg {
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    background-color: #333;
+    transform-origin: 0 0;
+}
+
+.spider-leg:nth-child(1) {
+    top: 20px;
+    left: 5px;
+    transform: rotate(30deg);
+}
+
+.spider-leg:nth-child(2) {
+    top: 25px;
+    left: 5px;
+    transform: rotate(0deg);
+}
+
+.spider-leg:nth-child(3) {
+    top: 30px;
+    left: 5px;
+    transform: rotate(-30deg);
+}
+
+.spider-leg:nth-child(4) {
+    top: 20px;
+    left: 35px;
+    transform: rotate(150deg);
+}
+
+.spider-leg:nth-child(5) {
+    top: 25px;
+    left: 35px;
+    transform: rotate(180deg);
+}
+
+.spider-leg:nth-child(6) {
+    top: 30px;
+    left: 35px;
+    transform: rotate(210deg);
+}
+
+.eye {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+    animation: blink 3s infinite;
+}
+
+.eye.top {
+    top: 15px;
+    left: 20px;
+}
+
+.eye.bottom {
+    top: 30px;
+    left: 20px;
+}
+
+@keyframes grow {
+    0% {
+        transform: scale(0.3);
+        opacity: 0.7;
+    }
+    10% {
+        transform: scale(0.5);
+    }
+    20% {
+        transform: scale(0.7);
+    }
+    30% {
+        transform: scale(0.9);
+    }
+    40%, 100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes blink {
+    0%, 45%, 55%, 100% {
+        height: 12px;
+    }
+    50% {
+        height: 2px;
+    }
+}
+
+/* Web lines appear sequentially */
+.web-line:nth-child(1) { animation: appear 0.5s linear 0.5s forwards; }
+.web-line:nth-child(2) { animation: appear 0.5s linear 1s forwards; }
+.web-line:nth-child(3) { animation: appear 0.5s linear 1.5s forwards; }
+.web-line:nth-child(4) { animation: appear 0.5s linear 2s forwards; }
+.web-line:nth-child(5) { animation: appear 0.5s linear 2.5s forwards; }
+.web-line:nth-child(6) { animation: appear 0.5s linear 3s forwards; }
+.web-line:nth-child(7) { animation: appear 0.5s linear 3.5s forwards; }
+.web-line:nth-child(8) { animation: appear 0.5s linear 4s forwards; }
+.web-line:nth-child(9) { animation: appear 0.5s linear 4.5s forwards; }
+.web-line:nth-child(10) { animation: appear 0.5s linear 5s forwards; }
+.web-line:nth-child(11) { animation: appear 0.5s linear 5.5s forwards; }
+.web-line:nth-child(12) { animation: appear 0.5s linear 6s forwards; }
+.web-line:nth-child(13) { animation: appear 0.5s linear 6.5s forwards; }
+.web-line:nth-child(14) { animation: appear 0.5s linear 7s forwards; }
+.web-line:nth-child(15) { animation: appear 0.5s linear 7.5s forwards; }
+
+@keyframes appear {
+    to {
+        opacity: 1;
+    }
 }
