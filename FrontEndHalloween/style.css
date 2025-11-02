@@ -361,7 +361,7 @@ a:hover {
     border-radius: 10px;
     padding: 1.5rem;
     margin: 2rem 0;
-    width: 50%; /* Adjusted width for flex layout */
+    width: 70%; /* Adjusted width for flex layout */
     max-width: 800px;
     height: 400px;
     overflow-y: scroll;

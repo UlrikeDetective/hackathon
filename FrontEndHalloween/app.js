@@ -101,6 +101,8 @@ async function loadToDoList() {
     }
 }
 
+let lastHighlightedItem = null;
+
 function highlightToDoItem(currentDays) {
     const todoItems = document.querySelectorAll('.todo-item');
     let closestItem = null;
@@ -120,7 +122,10 @@ function highlightToDoItem(currentDays) {
 
     if (closestItem) {
         closestItem.classList.add('highlight');
-        closestItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        if (closestItem !== lastHighlightedItem) {
+            closestItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            lastHighlightedItem = closestItem;
+        }
     }
 }
 
