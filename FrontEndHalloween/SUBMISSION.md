@@ -34,4 +34,3 @@ To enhance the theme, I integrated several CSS art snippets, including a more de
 
 As the project grew, I focused on refining the UI and UX. I updated the color palette to a darker, more modern theme, improved the layout and spacing for a cleaner look, and refactored the code for better maintainability. I also improved the scrolling behavior of the to-do list to make it more user-friendly.
 
-Overall, I'm proud of the immersive and interactive experience I was able to create. I learned a lot about CSS animations, JavaScript DOM manipulation, and creating a cohesive theme for a web page. In the future, I hope to add more interactive elements and perhaps even a backend to allow users to add their own to-do items.
