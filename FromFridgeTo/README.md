@@ -42,7 +42,10 @@ Veo (requires paid tier)
 
 ## Screenshots / Demo
 
-*(Add images of the frontend or output JSON here)*
+<img src="https://github.com/UlrikeDetective/hackathon/blob/main/FromFridgeTo/app_pics/App_start.png" alt="- - - app start pic - - -" width="65%">
+<img src="https://github.com/UlrikeDetective/hackathon/blob/main/FromFridgeTo/app_pics/App_result01.png" alt="- - - recipe result part one - - -" width="50%">
+<img src="https://github.com/UlrikeDetective/hackathon/blob/main/FromFridgeTo/app_pics/App_result02.png" alt="- - - recipe result part two - - -" width="50%">
+
 
 ---
 
