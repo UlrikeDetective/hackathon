@@ -26,9 +26,9 @@ ENV/
 *.err
 
 # --- Images (local test fridge photos) ---
-*.jpg
-*.jpeg
-*.png
+#*.jpg
+#*.jpeg
+#*.png
 
 # --- Docker ---
 *.tar
