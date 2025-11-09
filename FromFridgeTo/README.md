@@ -6,9 +6,7 @@ Upload a photo of your fridge, and the app detects the ingredients and suggests 
 This project combines **image understanding** and **text generation** using Gemini 2.5 Flash/Pro and is deployed on **Google Cloud Run**.
 
 ---
-### Part of the Join the Google AI Studio Multimodal Challenge:
-
-We're excited to announce our first challenge with Google AI!
+### Part of the Google AI Studio Multimodal Challenge:
 
 Running through September 14, the Google AI Studio Multimodal Challenge invites you to build and deploy innovative applets that showcase the incredible power of Gemini's multimodal capabilities.
 
@@ -17,7 +15,7 @@ There's one prompt for this challenge but three chances to win! We hope you give
 Our Prompt
 Your mission is to build and deploy an applet on Google AI Studio that shows off the power of Gemini in multimodal content understanding and/or generation.
 
-#### Your applet must meet these requirements:
+#### The applet must meet these requirements:
 
 Built on Google AI Studio
 Deployed using Cloud Run
@@ -29,6 +27,7 @@ Imagen (requires paid tier)
 Veo (requires paid tier)
 
 <https://dev.to/devteam/join-the-google-ai-studio-multimodal-challenge-3000-in-prizes-58g?>
+
 ---
 
 ## Features
