@@ -13,12 +13,6 @@
 | **Projects** | The Repository | Max-width container. 1px solid borders. Hover: Subtle lift. |
 | **Skills** | `system_config.json` | Syntax-highlighted code block look. |
 | **Footer** | `poweroff --now` | Simple contact links in monospace lowercase. |
-| ***Color Theme*** | Athens (Greece) | Theme: Ancient Marble and the Aegean Sea. The quintessential Mediterranean palette. Sun-baked white, warm marble that glows at sunset, deep olive greens, and the varying blues of the sea surrounding Attica.
-Tone	Hex Codes
-The Acropolis	#FDF5E6 (Warm White), #FAEBD7 (Antique Marble), #E6CDB7 (Sunlit Column)
-The Aegean	#0047AB (Cobalt Blue), #007FFF (Azure), #40E0D0 (Turquoise Shallows)
-Landscape	#556B2F (Olive Grove), #808000 (Dried Herb), #A9A9A9 (Stone Grey)
-Accents	#E2725B (Terracotta Roof), #FFDAB9 (Peach Sunset), #B8860B (Byzantine Gold)
 
 
 ---
@@ -120,9 +114,32 @@ I don't just solve problems; I optimize the process of solving them.
 ```json
 {
   "core_languages": ["Python", "R", "SQL"],
-  "environment": ["Docker", "AWS", "Linux/zsh"],
-  "data_science": ["Pandas", "NumPy", "BeautifulSoup", "ETL Pipelines"],
-  "leadership": ["Agile/Scrum", "Risk Mitigation", "Technical Roadmap Design"]
+  "web_frameworks": ["Django", "REST APIs", "Modern Web Dev"],
+  "data_engineering": [
+    "PostgreSQL", 
+    "MySQL", 
+    "Pandas", 
+    "NumPy", 
+    "ETL Pipelines", 
+    "Data Scraping"
+  ],
+  "dev_ops_environment": [
+    "Linux/zsh", 
+    "Homebrew", 
+    "Conda", 
+    "GitHub"
+  ],
+  "ai_automation": [
+    "Gemini CLI", 
+    "Google AI Studio", 
+    "Google Cloud Console"
+  ],
+  "system_management": [
+    "Agile/Scrum", 
+    "Risk Mitigation", 
+    "Technical Roadmap Design",
+    "Stakeholder Diplomacy"
+  ]
 }
 
 ```
@@ -132,25 +149,36 @@ I don't just solve problems; I optimize the process of solving them.
 ## 03 // The_Log
 #### > [Current Experiments]
 
-* `[Current Date]`: Investigating the performance overhead of [Tech] vs [Tech].
-* `[Last Week]`: Finally mastered a complex Vim workflow. Efficiency increased by 12%.
-* `[Learning]`: Deep dive into Distributed Systems and CAP Theorem.
+* `[2026-01-10]`: Audit Mode. Performing a massive personal data review of 2025 (metadata, logs, and media assets) with the goal of synthesizing it all into a unified personal dashboard.
+* `[In_Progress]`: Compiling the 2025 Municipal Budget Report. High-stakes documentation and data visualization for the Leipzig local councils.
+* `[Maintenance]`: Completed a deep dive into GitHub workflow optimization. Sanitized local environments, deprecated stagnant projects, and unified my virtual environment strategy for better system hygiene.
+* `[Side_Quest]`: Successfully bypassed a BBC Sounds geo-block annoyance. Since I can't access the audio, I wrote a scraping script to extract playlists from The Chillest Hour. The logic automates the transition to Spotify so the music remains, even if the voice of Sian Eleri is stuck behind a UK IP address.
 
+#### > [System_Updates]
+
+* `[2025_Completed]`: Certified in Full Stack Web Development and Data Security (Coursera).
+* `[Current_Stack]`: Building active projects using Django, Python, R, and Postgres.
+* `[Research]`: Monitoring daily shifts in the AI and data engineering landscape to keep my "Next" section updated.
 ---
 
 ## 04 // Connect
 
-* **Terminal:** `[Email Address]`
-* **Network:** `[LinkedIn Profile]`
-* **Source:** `[GitHub Profile]`
+* **Terminal:** `[herold.ulrike@gmail.com]`
+* **Network:** `[https://www.linkedin.com/in/ulrike-herold/]`
+* **Source:** `[GitHub Profile https://github.com/UlrikeDetective]`
 
 ---
 
 ### 🎨 05 // Visual Identity & Variables
 
-* **Background:** `#FAFAFA` (Off-white canvas)
-* **Text:** `#1A1A1A` (High-contrast ink)
-* **Accent:** `#00FF41` (Terminal Green) OR `#007AFF` (Cyber Blue)
+* | ***Color Theme*** | Athens (Greece) | Theme: Ancient Marble and the Aegean Sea. The quintessential Mediterranean palette. Sun-baked white, warm marble that glows at sunset, deep olive greens, and the varying blues of the sea surrounding Attica.
+Tone	Hex Codes
+The Acropolis	#FDF5E6 (Warm White), #FAEBD7 (Antique Marble), #E6CDB7 (Sunlit Column)
+The Aegean	#0047AB (Cobalt Blue), #007FFF (Azure), #40E0D0 (Turquoise Shallows)
+Landscape	#556B2F (Olive Grove), #808000 (Dried Herb), #A9A9A9 (Stone Grey)
+Accents	#E2725B (Terracotta Roof), #FFDAB9 (Peach Sunset), #B8860B (Byzantine Gold)
+* **Background:** `#FDF5E6` (Off-white canvas)
+* **Text:** `#0047AB` (High-contrast ink)
 * **Typography:** `JetBrains Mono` or `Fira Code`
 * **Spacing:** `padding: 4rem` (Embrace the white space)
 * ** To maintain the "Less is More" aesthetic with all these new sections, I recommend a two-column layout for the project details:
