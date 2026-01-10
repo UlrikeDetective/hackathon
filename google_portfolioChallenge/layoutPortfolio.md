@@ -62,19 +62,23 @@ I don't just solve problems; I optimize the process of solving them.
 
 ##### **Project 01: [Local council budgets 2021 - ongoing]**
 // Status: Version 2.1 (Active) // Impact: €550,000 Annual Public Spend managed
-* **The Challenge (The Hard Part):** Getting a task - local council budgets for the 10 local councils in Leipzig. 50.000 Euros (now 55.000 Euros - thanks to our good work) per Council and year and show the data in a dashboard. Make it work legally and transparently. And show that the budgets are working for local participation efforts.
-* **The Process (The Way):** After setting up the project, find a team of 3-4 people to work on it, create, test and set-up application forms to apply for the budgets (all in less than three months), get the council members on board, do promote the local budgets to the public, I also set-up a database to store all the information about the when, where, who, what, how much and so on to can monitor the project but also can generate insights in the project. My team is great in the administrative work and I am the one who is responsible for the technical, data and political side of the project.
-* **The Logic (The How):** The technical strategy. > *Example:* "Sadly we still have a few data breaks in the data, but we are working on it. At the moment the applications for the budgets are received through Formcycle (Step 1). We than check the application and transfer them into the concil information system (Step 2). All informations about an application can be found here including the status of the application, the documents, the budget, the project, the council, the date, the time and so on. I also set-up a database to store all the information about the when, where, who, what, how much and so on to can monitor the project but also can generate insights in the project (Step 3). The data from Step 3 is used to generate insights in the project (Step 4). A report is generated every year and sent to the council (Step 5). Every five years an audit is done and the budget is updated (Step 6). For this step we also do a survey to get the feedback of the council members, applicants and the public (Step 7)."
+* **The Challenge (The Hard Part):** Digitizing the distribution of local council budgets for 10 districts in Leipzig. The mission: build a transparent, legally compliant system to manage €55,000 per council annually, ensuring every Euro is traceable from application to public dashboard.
+* **The Process (The Way):** I lead a cross-functional team, moving from a blank slate to a live application system in under 90 days. My role bridged the gap between political diplomacy (council buy-in) and technical architecture. I designed a centralized database to track the who, what, when, and how much, transforming administrative chaos into a structured monitoring system.
+* **The Logic (The How):** I engineered a multi-stage pipeline:
+    * Ingestion: Structured intake via Formcycle.
+    * Validation: Manual/Technical audit and migration to the Council Information System.
+    * Relational Storage: Custom database design to map project status, funding documents, and district-specific telemetry.
+    * Reporting: Automated annual reports and a 5-year feedback loop powered by public/stakeholder surveys.
 * **✨ The Data Cleaning Flex**
-    * **Input (the raw chaos):** Not everyone love and cares about good, clean data like I do. I again learned the hard way that half of my team thought Excel is Word. Since than I put quiet a lot of conditional statements and rules into the files to make sure that the data is clean and consistent. That numbers are numbers and texts are strings.
-    * **The Fix (The Elegant Logic):** Still some cleanings are still needed. I normally start with Excel to clean misspellings and then I use Python or R to clean the data and make sure that the data is clean and consistent. I also use Python to create charts and visualizations to make the data more accessible and easier to understand. With the cleaned Excel/csv the public dashboard is also created.
-    * **Result (The Satisfaction):** Turned a project into a success and I have proof of it.
-* **The Code (The Source):** `[ open data ] - https://opendata.leipzig.de/dataset/stadtbezirksbudget`| `[Read Documentation] - https://ratsinformation.leipzig.de/allris_leipzig_public/vo020?VOLFDNR=2013109&refresh=false`
-* **The Tools (The Tech):** `Python` / `R` / `Excel` / `Formcycle`
-* **The Future (The Next):** Getting ride of some data breaks. Next the automation of the application into the council information system and to build an internal dashboard to monitor the project.
+    * **Input (the raw chaos):** Dealing with the "Excel-as-Word" syndrome. Data was frequently corrupted by inconsistent formatting, non-numeric strings in budget fields, and varied naming conventions across different team members..
+    * **The Fix (The Elegant Logic):** I implemented strict validation rules and conditional logic at the entry point to force data integrity. For legacy cleanup, I built a pipeline using Python and R to sanitize misspellings, normalize strings, and ensure that "numbers are numbers.
+    * **Result (The Satisfaction):** Transitioned the project from "guesswork" to a verifiable, high-fidelity public dashboard. Increased the budget by €50k based on the strength of our data-driven reporting.
+* **The Code (The Source):** `[ Open Data Portal] - https://opendata.leipzig.de/dataset/stadtbezirksbudget`| `[Documentation] - https://ratsinformation.leipzig.de/allris_leipzig_public/vo020?VOLFDNR=2013109&refresh=false`
+* **The Tools (The Tech):** Python / R / Excel (Power Query) / Formcycle / SQL (Database Design)
+* **The Future (The Next):** Eliminating remaining "data breaks" by automating the API handshake between Formcycle and the Council Information System. Next milestone: A real-time internal monitoring dashboard.
 
-##### **Project 01: [Project Name]**
-* **The Challenge (The Hard Part):** Briefly describe the "impossible" problem. Why was this difficult? (e.g., "The API was failing under 500ms latency requirements."). A legacy system was leaking memory and dropping 15% of its incoming packets due to unoptimized JSON parsing.
+##### **Project 02: [Tech layoffs]**
+* **The Challenge (The Hard Part):** Getting to know the industry I am thinking of entering and building a project to show my skills and knowledge.
 * **The Process (The Way):** Explain your PM approach. Did you use a Gantt chart? A Lean workflow? > *Example:* "Mapped the data flow using a state machine before writing the first line of Python."
 * **The Logic (The How):** The technical strategy. > *Example:* "Rebuilt the ingestion engine using an asynchronous worker pattern to decouple the data stream from the processing layer."
 * **✨ The Data Cleaning Flex**
@@ -85,9 +89,9 @@ I don't just solve problems; I optimize the process of solving them.
 * **The Tools (The Tech):** `Python` / `Pandas` / `Docker`
 * **The Future (The Next):** Scaling to handle real-time streaming via Kafka.
 
-##### **Project 01: [Project Name]**
-* **The Challenge (The Hard Part):** Briefly describe the "impossible" problem. Why was this difficult? (e.g., "The API was failing under 500ms latency requirements."). A legacy system was leaking memory and dropping 15% of its incoming packets due to unoptimized JSON parsing.
-* **The Process (The Way):** Explain your PM approach. Did you use a Gantt chart? A Lean workflow? > *Example:* "Mapped the data flow using a state machine before writing the first line of Python."
+##### **Project 03: [... on the road] - Ongoing**
+* **The Challenge (The Hard Part):** Getting my three passions together: Data, Coding and Travel. And finding a usecase for my metadata from photos, google maps and apple fitness. And having side trips into data privacy and security.
+* **The Process (The Way):** Actually this project contains several subprojects. I am currently working on. The public one is a webpage with the places I visited - https://ulrikedetective.github.io/UlrikeHerold/continent_map_pins.html . Then there is the data collecting of my data from google maps and apple fitness and others with the process of understanding the structure of the data and bring them into a format I can work with. And then there is the data cleaning and analysis of my data.
 * **The Logic (The How):** The technical strategy. > *Example:* "Rebuilt the ingestion engine using an asynchronous worker pattern to decouple the data stream from the processing layer."
 * **✨ The Data Cleaning Flex**
     * **Input (the raw chaos):** 4.2GB of "junk" telemetry with inconsistent timestamps and nested null values.
@@ -96,6 +100,19 @@ I don't just solve problems; I optimize the process of solving them.
 * **The Code (The Source):** `[ View Repository ]`| `[Read Documentation]`
 * **The Tools (The Tech):** `Python` / `Pandas` / `Docker`
 * **The Future (The Next):** Scaling to handle real-time streaming via Kafka.
+
+#### > [Project 05: [Coffee Code - the fun weekend CSS project]]
+* **The Challenge (The Hard Part):** I love coffee, it's not nice outside and there is a CSS Challenge on devpost (I think)
+* **The Process (The Way):** 
+* **The Logic (The How):** The technical strategy. > *Example:* "Rebuilt the ingestion engine using an asynchronous worker pattern to decouple the data stream from the processing layer."
+* **✨ The Data Cleaning Flex**
+    * **Input (the raw chaos):** 4.2GB of "junk" telemetry with inconsistent timestamps and nested null values.
+    * **The Fix (The Elegant Logic):** Wrote a custom Python-based sanitizer that normalized time-series data and handled edge-case nulls via a predictive imputation script.
+    * **Result (The Satisfaction):** Turned a corrupted graveyard into a high-fidelity analytics source.
+* **The Code (The Source):** `[ View Repository ]`| `[Read Documentation]`
+* **The Tools (The Tech):** `Python` / `Pandas` / `Docker`
+* **The Future (The Next):** Scaling to handle real-time streaming via Kafka.
+
 ---
 
 ## 02 // Environment_Variables
