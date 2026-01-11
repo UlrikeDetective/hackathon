@@ -83,17 +83,23 @@ I don't just solve problems; I optimize the process of solving them.
 * **The Tools (The Tech):** `Python` / `Pandas` / `Docker`
 * **The Future (The Next):** Scaling to handle real-time streaming via Kafka.
 
-##### **Project 03: [... on the road] - Ongoing**
-* **The Challenge (The Hard Part):** Getting my three passions together: Data, Coding and Travel. And finding a usecase for my metadata from photos, google maps and apple fitness. And having side trips into data privacy and security.
-* **The Process (The Way):** Actually this project contains several subprojects. I am currently working on. The public one is a webpage with the places I visited - https://ulrikedetective.github.io/UlrikeHerold/continent_map_pins.html . Then there is the data collecting of my data from google maps and apple fitness and others with the process of understanding the structure of the data and bring them into a format I can work with. And then there is the data cleaning and analysis of my data.
-* **The Logic (The How):** The technical strategy. > *Example:* "Rebuilt the ingestion engine using an asynchronous worker pattern to decouple the data stream from the processing layer."
+##### **Project 03: [..on the road] // Personal Data Audit**
+// Status: Continuous Integration // Focus: Geo-Spatial Intelligence & Data Sovereignty
+* **The Challenge (The Hard Part):** Aggregating disparate, high-volume telemetry from Google Maps, Apple Fitness, Spotify, and Meta into a unified "Life Dashboard." The goal is to reclaim my own metadata and transform it from corporate tracking points into meaningful visual insights, while navigating the complex layers of personal data privacy and security.
+* **The Process (The Way):** This is a multi-stage technical research project. I reverse-engineer my own digital footprint by extracting raw exports, decoding their proprietary structures, and normalizing them into a queryable format. Visually, I draw inspiration from high-end art newsletters and minimal design, such as using dynamic scaling markers—where the radius of a location pin corresponds to visit frequency.
+* **The Logic (The How):** I utilize Python and R for the heavy lifting. The pipeline involves:
+    * Extraction: Automating the retrieval of personal archives.
+    * Geo-Processing: Using OSMNX and GeoPandas to map coordinates against OpenStreetMap data.
+    * Synthesis: Storing the normalized results in a local SQL environment.
+    * Refinement: Applying QGIS techniques to create high-fidelity, "postcard-quality" cartography for public-facing visualizations.
 * **✨ The Data Cleaning Flex**
-    * **Input (the raw chaos):** 4.2GB of "junk" telemetry with inconsistent timestamps and nested null values.
-    * **The Fix (The Elegant Logic):** Wrote a custom Python-based sanitizer that normalized time-series data and handled edge-case nulls via a predictive imputation script.
-    * **Result (The Satisfaction):** Turned a corrupted graveyard into a high-fidelity analytics source.
-* **The Code (The Source):** `[ View Repository ]`| `[Read Documentation]`
-* **The Tools (The Tech):** `Python` / `Pandas` / `Docker`
-* **The Future (The Next):** Scaling to handle real-time streaming via Kafka.
+    * **Input (the raw chaos):** Thousands of JSON/CSV files with overlapping timestamps, inconsistent GPS accuracy, and varying schemas across different platforms.
+    * **The Fix (The Elegant Logic):** I treat this as a deep-research mission. I’ve developed custom logic to deduplicate location pings and handle "signal noise," using a mix of Python scripts and AI-assisted debugging to find the most efficient way to merge Apple’s health metrics with Google’s location history.
+    * **Result (The Satisfaction):** Turning "tracking data" into a curated digital autobiography. The methodology developed here directly informs my professional work in educating the public on city layouts and municipal budgets.
+* **The Code (The Source):** [ View Map Visualization ] - ulrikedetective.github.io [ View Source Repository ] - [GitHub] - https://github.com/UlrikeDetective/maps 
+* **The Tools (The Tech):** `Python` / `R` / `SQL` / `OSMNX` / `GEOPANDAS` / `QGIS`
+* **The Future (The Next):** Consolidating these insights into a dedicated technical blog. Future iterations will focus on hardening the local security layer to ensure the dashboard remains a private "sovereign" system.
+* **The Look:** - Build here a small gallery of maps and visualizations to show my skills and knowledge.
 
 #### > [Project 05: [Coffee Code - the fun weekend CSS project]]
 * **The Challenge (The Hard Part):** I love coffee, it's not nice outside and there is a CSS Challenge on devpost (I think)
