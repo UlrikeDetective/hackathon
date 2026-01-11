@@ -71,17 +71,18 @@ I don't just solve problems; I optimize the process of solving them.
 * **The Tools (The Tech):** Python / R / Excel (Power Query) / Formcycle / SQL (Database Design)
 * **The Future (The Next):** Eliminating remaining "data breaks" by automating the API handshake between Formcycle and the Council Information System. Next milestone: A real-time internal monitoring dashboard.
 
-##### **Project 02: [Tech layoffs]**
-* **The Challenge (The Hard Part):** Getting to know the industry I am thinking of entering and building a project to show my skills and knowledge.
-* **The Process (The Way):** Explain your PM approach. Did you use a Gantt chart? A Lean workflow? > *Example:* "Mapped the data flow using a state machine before writing the first line of Python."
-* **The Logic (The How):** The technical strategy. > *Example:* "Rebuilt the ingestion engine using an asynchronous worker pattern to decouple the data stream from the processing layer."
+##### **Project 02: [Tech layoffs] // Industry Intelligence**
+// Status: Maintenance Mode (Updating for 2025) // Dataset: 2020 - 2024 (Ongoing)
+* **The Challenge (The Hard Part):** Quantifying the volatility of the modern tech landscape. Entering a new industry requires an objective understanding of its risks and cycles. The mission was to transform raw, external reporting into a high-integrity dataset that tracks the "who, where, and when" of industry-wide downsizing.
+* **The Process (The Way):** I sourced the primary data via a custom scraper targeting layoffs.fyi. The workflow followed a strict engineering pipeline: Extraction -> Normalization -> PostgreSQL Storage -> Jupyter-based Analysis. This project served as my "training ground" for handling large-scale public datasets and maintaining a local data warehouse.
+* **The Logic (The How):** The system is built around a PostgreSQL database designed to store long-term industry trends. I utilized Jupyter Notebooks for the exploratory data analysis (EDA), allowing for a reproducible research environment where every chart is backed by a verifiable query.
 * **✨ The Data Cleaning Flex**
-    * **Input (the raw chaos):** 4.2GB of "junk" telemetry with inconsistent timestamps and nested null values.
-    * **The Fix (The Elegant Logic):** Wrote a custom Python-based sanitizer that normalized time-series data and handled edge-case nulls via a predictive imputation script.
-    * **Result (The Satisfaction):** Turned a corrupted graveyard into a high-fidelity analytics source.
-* **The Code (The Source):** `[ View Repository ]`| `[Read Documentation]`
-* **The Tools (The Tech):** `Python` / `Pandas` / `Docker`
-* **The Future (The Next):** Scaling to handle real-time streaming via Kafka.
+    * **Input (the raw chaos):** Scraped data with significant fragmentation—missing employee counts, inconsistent company naming (aliases), and varying date formats.
+    * **The Fix (The Elegant Logic):** I utilized R and Python in tandem. I built a series of imputation scripts to handle missing values and a deduplication layer to ensure company entities remained unique across the 4-year span. This ensured that "numbers stayed numbers" and the trends remained statistically significant.
+    * **Result (The Satisfaction):** Gained a granular, non-biased view of the tech market. I successfully published the cleaned dataset on Kaggle to contribute back to the data community.
+* **The Code (The Source):** [ GitHub Repository ] - tech_layoffs [ Kaggle Dataset ] - tech-layoffs-2020-2024
+* **The Tools (The Tech):** `Python` / `Pandas` / `R` / `Postgres` / `Jupyter` / `Excel`
+* **The Future (The Next):** Ingesting 2025 telemetry. The goal is to evolve the project into a predictive dashboard that identifies early signals of industry stabilization or shift.
 
 ##### **Project 03: [..on the road] // Personal Data Audit**
 // Status: Continuous Integration // Focus: Geo-Spatial Intelligence & Data Sovereignty
@@ -101,17 +102,18 @@ I don't just solve problems; I optimize the process of solving them.
 * **The Future (The Next):** Consolidating these insights into a dedicated technical blog. Future iterations will focus on hardening the local security layer to ensure the dashboard remains a private "sovereign" system.
 * **The Look:** - Build here a small gallery of maps and visualizations to show my skills and knowledge.
 
-#### > [Project 05: [Coffee Code - the fun weekend CSS project]]
-* **The Challenge (The Hard Part):** I love coffee, it's not nice outside and there is a CSS Challenge on devpost (I think)
-* **The Process (The Way):** 
-* **The Logic (The How):** The technical strategy. > *Example:* "Rebuilt the ingestion engine using an asynchronous worker pattern to decouple the data stream from the processing layer."
+#### > [Project 05: [Coffee Code] // Weekend Experiment
+// Status: Complete // Type: UI/UX Rapid Prototype
+* **The Challenge (The Hard Part):** Combatting a grey weekend by translating coffee culture into code. The goal was to execute a high-quality frontend response to a community CSS challenge within a 24-hour window.
+* **The Process (The Way):** Utilized Gemini and Google AI Studio as pair programmers to accelerate the prototyping phase. I focused on iterative prompting to refine the UI components, ensuring the "vibe" matched the technical execution.
+* **The Logic (The How):** Standard HTML5, CSS3, and vanilla JavaScript. No heavy frameworks—just clean, lightweight code focused on visual impact.
 * **✨ The Data Cleaning Flex**
-    * **Input (the raw chaos):** 4.2GB of "junk" telemetry with inconsistent timestamps and nested null values.
-    * **The Fix (The Elegant Logic):** Wrote a custom Python-based sanitizer that normalized time-series data and handled edge-case nulls via a predictive imputation script.
-    * **Result (The Satisfaction):** Turned a corrupted graveyard into a high-fidelity analytics source.
-* **The Code (The Source):** `[ View Repository ]`| `[Read Documentation]`
-* **The Tools (The Tech):** `Python` / `Pandas` / `Docker`
-* **The Future (The Next):** Scaling to handle real-time streaming via Kafka.
+    * **Input (the raw chaos):** A messy blend of initial creative concepts and experimental CSS snippets.
+    * **The Fix (The Elegant Logic):** Disciplined iteration. I refactored the generated AI output into a maintainable stylesheet, stripping away the bloat to find a "Less is More" visual balance.
+    * **Result (The Satisfaction):** A polished weekend artifact that proves my ability to ship creative frontend work under tight deadlines.
+* **The Code (The Source):** [ Live Site ] — Coffee Culture
+* **The Tools (The Tech):** `HTML` / `CSS` / `JS` / `Gemini` / `Google AI Studio`
+* **The Future (The Next):** Synthesizing this creative "front-end" energy with my "back-end" data pipelines to build more expressive, data-driven web interfaces.
 
 ---
 
