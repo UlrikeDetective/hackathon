@@ -1,4 +1,5 @@
 import React from 'react';
+import CatAnimation from './CatAnimation';
 
 const Footer = () => {
   return (
@@ -19,6 +20,8 @@ const Footer = () => {
           <a href="https://github.com/UlrikeDetective" target="_blank" rel="noopener noreferrer" style={{ fontSize: '1.1rem' }}>[GitHub]</a>
         </div>
       </div>
+
+      <CatAnimation />
 
       <div style={{ textAlign: 'center', color: 'var(--stone-grey)', fontSize: '0.8rem', marginTop: '4rem' }}>
         <p><code>poweroff --now</code></p>

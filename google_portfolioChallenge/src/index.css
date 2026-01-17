@@ -79,3 +79,208 @@ a:hover {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-olive); 
 }
+
+/* Cat Animation Styles */
+.sour-gummy-100 {
+  font-family: "Sour Gummy", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cat select,
+.cat ::picker(select) {
+  appearance: base-select;
+  font-size: 18px;
+}
+
+.cat select {
+  min-width: 400px;
+  padding: 16px;
+  border-radius: 8px;
+  min-height: 58px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.cat select:hover {
+  background-color: yellow;
+}
+
+.cat ::picker(select) {
+  border-radius: 0px 0px 8px 8px;
+  border-top: none;
+}
+
+.cat ::picker-icon,
+.cat ::checkmark {
+  display: none;
+}
+
+.cat [hidden] {
+  display: none;
+}
+
+.cat option {
+  padding: 0px;
+  padding-left: 20px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cat option:hover {
+  background: yellow;
+}
+
+.cat .sleep-symbol {
+  margin-left: 260px;
+  font-weight: 600;
+  margin-bottom: -40px;
+}
+
+.cat .sleep-symbol span {
+  position: relative;
+  display: inline-block;
+  opacity: 1;
+  transform: scale(1);
+  animation: sleep 4s ease-in-out infinite;
+}
+
+.cat .sleep-symbol span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.cat .sleep-symbol span:nth-child(2) {
+  animation-delay: 1s;
+  margin-left: -10px;
+}
+
+.cat .sleep-symbol span:nth-child(3) {
+  animation-delay: 2s;
+  margin-left: -10px;
+}
+
+.cat .thecat {
+  z-index: 2;
+  margin-left: 220px;
+  margin-bottom: -62px;
+  position: relative;
+  pointer-events: none;
+}
+
+#tail {
+  visibility: visible;
+}
+
+#longtail {
+  visibility: hidden;
+}
+
+.cat option svg {
+  margin-right: -3px;
+}
+
+/* activate cat when mouse approaches! */
+.mouse-detector {
+  padding: 20px 30px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mouse-detector:hover #lefteyelid {
+  visibility: hidden;
+}
+
+.mouse-detector:hover .sleep-symbol {
+  visibility: hidden;
+}
+
+.cat {
+  padding: 30px;
+}
+
+.cat:hover #righteyelid {
+  visibility: hidden;
+}
+
+.thecat #eyesdown {
+  visibility: hidden;
+}
+
+.cat:has(.side-select:hover) #eyesdown {
+  visibility: visible;
+}
+
+.cat select:open {
+  border-radius: 8px 8px 0px 0px;
+}
+
+.cat:has(option:hover) #righteyelid,
+.cat:has(option:hover) #lefteyelid,
+.cat:has(option:hover) .sleep-symbol {
+  visibility: hidden;
+}
+
+.cat:has(option:hover) #eyesdown {
+  visibility: visible;
+}
+
+/* auto-cat tail assist */
+selectedcontent svg {
+  display: none;
+  visibility: hidden;
+}
+
+.cat:has(option:hover) #tail {
+  visibility: hidden;
+}
+
+.cat:has(option:hover) #longtail {
+  visibility: visible;
+}
+
+option:has(~ option:hover) #tailpiece {
+  visibility: visible;
+}
+
+.cat option {
+  min-height: 48px;
+}
+
+.cat option:hover #endpiece {
+  visibility: visible;
+}
+
+.cat option #tailpiece {
+  visibility: hidden;
+}
+
+.cat option #endpiece {
+  visibility: hidden;
+}
+
+.instructions {
+  color: #444;
+  margin-top: 1rem;
+  font-family: "Sour Gummy", sans-serif;
+  text-align: center;
+}
+
+@keyframes sleep {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: translate(-5px, -35px) scale(1.2);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-60px) scale(1.5);
+  }
+}
