@@ -49,6 +49,7 @@ jobs:
           # Copy Root index.html and style.css
           cp index.html _site/index.html
           cp style.css _site/style.css
+          cp favicon.svg _site/favicon.svg
           
           # Copy Static Sub-Projects
           cp -r CSSArtCompetion _site/
