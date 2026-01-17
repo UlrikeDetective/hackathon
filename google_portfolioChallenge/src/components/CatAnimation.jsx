@@ -2,7 +2,7 @@ import React from 'react';
 
 const CatAnimation = () => {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '2rem 0' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '0' }}>
       <div className="mouse-detector">
         <div className="cat">
           <div className="sleep-symbol">
@@ -145,79 +145,7 @@ const CatAnimation = () => {
               </g>
             </svg>
           </div>
-          <select className="side-select">
-            <button>
-              {/* @ts-ignore */}
-              <selectedcontent></selectedcontent>
-            </button>
-            <option value="" hidden>
-              <span>How much <strong>meow</strong> do you need?</span>
-            </option>
-            <option value="little">
-              <span>🐾 A little</span>
-              <svg xmlSpace="preserve" width="49.987" height="48" viewBox="0 0 13.226 12.7">
-                <g fill="#000" fillOpacity="1" stroke="none" strokeLinecap="round" strokeLinejoin="round"
-                  strokeOpacity=".988" display="inline" transform="translate(-114.596 -144.523)">
-                  <path id="endpiece" strokeWidth=".529"
-                    d="M123.03 144.523c-.16 4.227-.609 7.58-1.632 7.915-2.976.975-2.985-2.38-5.574-2.928s-1.13 6.587 4.822 6.527c2.697-.027 4.356-.485 6.218-5.348.442-1.154.766-3.398.958-6.166z"
-                    display="inline" />
-                  <path id="tailpiece" strokeWidth=".753" d="M123.041 144.523h4.781v12.7h-4.781z" />
-                </g>
-              </svg>
-            </option>
-            <option value="morethanalittle">
-              <span>🐾 A bit more than a little</span>
-              <svg xmlSpace="preserve" width="49.987" height="48" viewBox="0 0 13.226 12.7">
-                <g fill="#000" fillOpacity="1" stroke="none" strokeLinecap="round" strokeLinejoin="round"
-                  strokeOpacity=".988" display="inline" transform="translate(-114.596 -144.523)">
-                  <path id="endpiece" strokeWidth=".529"
-                    d="M123.03 144.523c-.16 4.227-.609 7.58-1.632 7.915-2.976.975-2.985-2.38-5.574-2.928s-1.13 6.587 4.822 6.527c2.697-.027 4.356-.485 6.218-5.348.442-1.154.766-3.398.958-6.166z"
-                    display="inline" />
-                  <path id="tailpiece" strokeWidth=".753" d="M123.041 144.523h4.781v12.7h-4.781z" />
-                </g>
-              </svg>
-            </option>
-            <option value="good">
-              <span>🐾 A good amount</span>
-              <svg xmlSpace="preserve" width="49.987" height="48" viewBox="0 0 13.226 12.7">
-                <g fill="#000" fillOpacity="1" stroke="none" strokeLinecap="round" strokeLinejoin="round"
-                  strokeOpacity=".988" display="inline" transform="translate(-114.596 -144.523)">
-                  <path id="endpiece" strokeWidth=".529"
-                    d="M123.03 144.523c-.16 4.227-.609 7.58-1.632 7.915-2.976.975-2.985-2.38-5.574-2.928s-1.13 6.587 4.822 6.527c2.697-.027 4.356-.485 6.218-5.348.442-1.154.766-3.398.958-6.166z"
-                    display="inline" />
-                  <path id="tailpiece" strokeWidth=".753" d="M123.041 144.523h4.781v12.7h-4.781z" />
-                </g>
-              </svg>
-            </option>
-            <option value="large">
-              <span>🐾 A large amount</span>
-              <svg xmlSpace="preserve" width="49.987" height="48" viewBox="0 0 13.226 12.7">
-                <g fill="#000" fillOpacity="1" stroke="none" strokeLinecap="round" strokeLinejoin="round"
-                  strokeOpacity=".988" display="inline" transform="translate(-114.596 -144.523)">
-                  <path id="endpiece" strokeWidth=".529"
-                    d="M123.03 144.523c-.16 4.227-.609 7.58-1.632 7.915-2.976.975-2.985-2.38-5.574-2.928s-1.13 6.587 4.822 6.527c2.697-.027 4.356-.485 6.218-5.348.442-1.154.766-3.398.958-6.166z"
-                    display="inline" />
-                  <path id="tailpiece" strokeWidth=".753" d="M123.041 144.523h4.781v12.7h-4.781z" />
-                </g>
-              </svg>
-            </option>
-            <option value="max">
-              <span>⭐ Maximum meow! ⭐</span>
-              <svg xmlSpace="preserve" width="49.987" height="48" viewBox="0 0 13.226 12.7">
-                <g fill="#000" fillOpacity="1" stroke="none" strokeLinecap="round" strokeLinejoin="round"
-                  strokeOpacity=".988" display="inline" transform="translate(-114.596 -144.523)">
-                  <path id="endpiece" strokeWidth=".529"
-                    d="M123.03 144.523c-.16 4.227-.609 7.58-1.632 7.915-2.976.975-2.985-2.38-5.574-2.928s-1.13 6.587 4.822 6.527c2.697-.027 4.356-.485 6.218-5.348.442-1.154.766-3.398.958-6.166z"
-                    display="inline" />
-                  <path id="tailpiece" strokeWidth=".753" d="M123.041 144.523h4.781v12.7h-4.781z" />
-                </g>
-              </svg>
-            </option>
-          </select>
         </div>
-      </div>
-      <div className="instructions">
-        ⚠️ Approach sleeping cat slowly with mouse!
       </div>
     </div>
   );

@@ -9,7 +9,15 @@ const Footer = () => {
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', marginBottom: '3rem' }}>
         <div>
           <span style={{ color: 'var(--stone-grey)', display: 'block', fontSize: '0.8rem', marginBottom: '0.5rem' }}>Terminal:</span>
-          <a href="mailto:herold.ulrike@gmail.com" style={{ fontSize: '1.1rem' }}>[herold.ulrike@gmail.com]</a>
+          <a href="mailto:herold.ulrike@gmail.com" style={{ 
+            fontSize: '1rem', 
+            padding: '0.6rem 1.2rem', 
+            border: '1px solid var(--text-color)',
+            display: 'inline-block',
+            marginTop: '0.2rem'
+          }}>
+            [ Send me a message ]
+          </a>
         </div>
         <div>
           <span style={{ color: 'var(--stone-grey)', display: 'block', fontSize: '0.8rem', marginBottom: '0.5rem' }}>Network:</span>
@@ -21,11 +29,19 @@ const Footer = () => {
         </div>
       </div>
 
-      <CatAnimation />
-
-      <div style={{ textAlign: 'center', color: 'var(--stone-grey)', fontSize: '0.8rem', marginTop: '4rem' }}>
-        <p><code>poweroff --now</code></p>
-        <p style={{ marginTop: '1rem' }}>&copy; {new Date().getFullYear()} Ulrike Herold. System operational.</p>
+      <div style={{ 
+        display: 'flex', 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        gap: '2rem', 
+        marginTop: '4rem',
+        flexWrap: 'wrap'
+      }}>
+        <div style={{ textAlign: 'right', color: 'var(--stone-grey)', fontSize: '0.8rem' }}>
+          <p><code>poweroff --now</code></p>
+          <p style={{ marginTop: '0.5rem' }}>&copy; {new Date().getFullYear()} Ulrike Herold. System operational.</p>
+        </div>
+        <CatAnimation />
       </div>
     </footer>
   );
