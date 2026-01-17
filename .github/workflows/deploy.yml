@@ -46,12 +46,14 @@ jobs:
           # Copy Portfolio build to subfolder
           cp -r google_portfolioChallenge/dist/* _site/portfolio/
           
-          # Copy Root index.html (Starter Website)
-          if [ -f index.html ]; then
-            cp index.html _site/index.html
-          else
-            echo "<h1>Welcome to Ulrike's Hackathon Repo</h1><p><a href='/hackathon/portfolio/'>Go to Portfolio</a></p>" > _site/index.html
-          fi
+          # Copy Root index.html and style.css
+          cp index.html _site/index.html
+          cp style.css _site/style.css
+          
+          # Copy Static Sub-Projects
+          cp -r CSSArtCompetion _site/
+          cp -r FrontEndHalloween _site/
+          cp -r JuneCelebration _site/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
