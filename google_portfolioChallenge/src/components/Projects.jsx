@@ -35,8 +35,8 @@ const projectsData = [
       result: "Granular, non-biased view. Published on Kaggle."
     },
     code: [
-      { label: "GitHub Repository", url: "#" }, 
-      { label: "Kaggle Dataset", url: "#" }
+      { label: "GitHub Repository", url: "https://github.com/UlrikeDetective/DataScienceProjects/tree/main/tech_layoffs" }, 
+      { label: "Kaggle Dataset", url: "https://www.kaggle.com/datasets/ulrikeherold/tech-layoffs-2020-2024" }
     ],
     tech: ["Python", "Pandas", "R", "Postgres", "Jupyter"],
     next: "Ingesting 2025 telemetry. Predictive dashboard.",
@@ -55,7 +55,7 @@ const projectsData = [
       result: "Curated digital autobiography."
     },
     code: [
-      { label: "Map Visualization", url: "https://ulrikedetective.github.io" },
+      { label: "Map Visualization", url: "https://ulrikedetective.github.io/UlrikeHerold/continent_map_pins.html" },
       { label: "GitHub", url: "https://github.com/UlrikeDetective/maps" }
     ],
     tech: ["Python", "R", "SQL", "OSMNX", "GEOPANDAS", "QGIS"],
@@ -75,7 +75,7 @@ const projectsData = [
       result: "Polished weekend artifact."
     },
     code: [
-      { label: "Live Site", url: "#" }
+      { label: "Live Site", url: "https://ulrikedetective.github.io/UlrikeHerold/coffeeculture/index.html" }
     ],
     tech: ["HTML", "CSS", "JS", "Gemini"],
     next: "Synthesizing creative front-end with back-end pipelines.",
