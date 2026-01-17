@@ -1,0 +1,81 @@
+:root {
+  --bg-color: #FDF5E6;
+  --text-color: #0047AB;
+  --text-secondary: #007FFF;
+  --accent-terracotta: #E2725B;
+  --accent-olive: #556B2F;
+  --accent-turquoise: #40E0D0;
+  --accent-gold: #B8860B;
+  --stone-grey: #A9A9A9;
+  
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-mono);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+  position: relative;
+}
+
+a:hover {
+  color: var(--accent-terracotta);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Terminal Utilities */
+.cursor {
+  display: inline-block;
+  width: 10px;
+  height: 1.2em;
+  background-color: var(--text-color);
+  animation: blink 1s step-end infinite;
+  vertical-align: middle;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.terminal-box {
+  border-left: 2px solid var(--bg-color); /* Updated in specific component overrides */
+  padding-left: 1rem;
+}
+
+.section-padding {
+  padding: 4rem 0;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-color); 
+}
+::-webkit-scrollbar-thumb {
+  background: var(--stone-grey); 
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-olive); 
+}

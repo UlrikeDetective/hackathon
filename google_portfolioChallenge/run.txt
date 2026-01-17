@@ -1,0 +1,4 @@
+  How to run the application:
+   - Start Development Server: npm run dev
+   - Build for Production: npm run build
+   - View Documentation: npm run open-docs
