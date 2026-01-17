@@ -1,0 +1,62 @@
+name: Deploy Monorepo to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
+
+      # Build google_portfolioChallenge
+      - name: Install Portfolio Dependencies
+        run: |
+          cd google_portfolioChallenge
+          npm install
+
+      - name: Build Portfolio
+        run: |
+          cd google_portfolioChallenge
+          npm run build
+
+      # Prepare Artifact Structure
+      - name: Prepare Deployment Artifact
+        run: |
+          mkdir -p _site/portfolio
+          # Copy Portfolio build to subfolder
+          cp -r google_portfolioChallenge/dist/* _site/portfolio/
+          
+          # Copy Root index.html (Starter Website)
+          if [ -f index.html ]; then
+            cp index.html _site/index.html
+          else
+            echo "<h1>Welcome to Ulrike's Hackathon Repo</h1><p><a href='/hackathon/portfolio/'>Go to Portfolio</a></p>" > _site/index.html
+          fi
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./_site
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
