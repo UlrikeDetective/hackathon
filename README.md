@@ -12,12 +12,14 @@ The code here spans the spectrum of **Python/Flask** logic, **React** interactiv
 
 ## The Layout
 
+```text
 /
 ├── ⚪ CSSArtCompetion         # Experiments in pure style
 ├── 🪵 FromFridgeTo            # AI-powered recipe generator (Gemini + Flask)
 ├── 🕷 FrontEndHalloween       # Spooky interface designs
 ├── 🌿 google_portfolioChallenge # React & Framer Motion showcase
 └── 🌤 JuneCelebration         # Seasonal frontend concepts
+```
 
 ---
 
