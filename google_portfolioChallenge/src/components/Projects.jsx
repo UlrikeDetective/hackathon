@@ -75,7 +75,7 @@ const projectsData = [
       result: "Polished weekend artifact."
     },
     code: [
-      { label: "Live Site", url: "https://ulrikedetective.github.io/UlrikeHerold/coffeeculture/index.html" }
+      { label: "Live Site to weekend experiments", url: "https://ulrikedetective.github.io/hackathon/" }
     ],
     tech: ["HTML", "CSS", "JS", "Gemini"],
     next: "Synthesizing creative front-end with back-end pipelines.",

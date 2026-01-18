@@ -11,10 +11,11 @@ With this portfolio, I wanted to express my "Modern Hacker" aesthetic: clean, mi
 **Repository:** [https://github.com/UlrikeDetective/hackathon/tree/main/google_portfolioChallenge](https://github.com/UlrikeDetective/hackathon/tree/main/google_portfolioChallenge)
 
 ## How I Built It
-I built this application using **React 18** and **Vite**, focusing on a component-based architecture to keep the "system" modular.
+I built this application using **React 18** and **Vite**, focusing on a component-based architecture to keep the "system" modular. My development workflow was centered around the **Gemini CLI**, which allowed me to leverage AI without leaving the terminal. To ensure high-quality outputs, I followed industry best practices—extensively researching articles on Medium, Google AI blogs, and technical newsletters. I implemented these insights by using structured **TOML** and **Markdown** files to maintain clean, version-controlled prompts and context.
 
 **Google AI Tools (Gemini) Usage:**
 Gemini acted as my full-stack pair programmer throughout the process:
+*   **Prompt Engineering & Context:** Using the Gemini CLI and a file-based prompting strategy (TOML/MD), I was able to feed complex architectural requirements to the model, ensuring the code remained idiomatic and aligned with the project's "Modern Hacker" aesthetic.
 *   **Design Architecture:** We brainstormed the "Ancient Marble and Aegean Sea" color palette and the "Terminal/Monospace" typography to create a unique "Hacker/Researcher" vibe.
 *   **Component Logic:** Gemini helped generate the React components (Hero, Projects, Skills) based on my specific data structures (like the JSON-styled Skills section).
 *   **CSS Art Integration:** I had a complex HTML/SVG "Cat & Mouse" animation (from a CSS art challenge). Gemini helped me port this into a React component (`CatAnimation.jsx`), isolate the styles to prevent conflicts with the global theme, and position it perfectly in the footer next to the "poweroff" command.
