@@ -1,0 +1,26 @@
+*This is a submission for the [New Year, New You Portfolio Challenge Presented by Google AI](https://dev.to/challenges/new-year-new-you-google-ai-2025-12-31)*
+
+## About Me
+I am Ulrike, a Systems Engineer in training and Data Architect in the making. My background is in taming chaotic datasets—whether it's local council budgets or personal geo-spatial telemetry.
+
+With this portfolio, I wanted to express my "Modern Hacker" aesthetic: clean, minimal, and focused on technical truth over visual fluff. I don't just solve problems; I optimize the process of solving them. I wanted a site that felt like a "System Log" or a terminal session, reflecting my love for the CLI, efficiency, and the "Type-2 Fun" of debugging.
+
+## Portfolio
+{% embed https://ulrikedetective.github.io/hackathon/portfolio/ %}
+
+**Repository:** [https://github.com/UlrikeDetective/hackathon/tree/main/google_portfolioChallenge](https://github.com/UlrikeDetective/hackathon/tree/main/google_portfolioChallenge)
+
+## How I Built It
+I built this application using **React 18** and **Vite**, focusing on a component-based architecture to keep the "system" modular.
+
+**Google AI Tools (Gemini) Usage:**
+Gemini acted as my full-stack pair programmer throughout the process:
+*   **Design Architecture:** We brainstormed the "Ancient Marble and Aegean Sea" color palette and the "Terminal/Monospace" typography to create a unique "Hacker/Researcher" vibe.
+*   **Component Logic:** Gemini helped generate the React components (Hero, Projects, Skills) based on my specific data structures (like the JSON-styled Skills section).
+*   **CSS Art Integration:** I had a complex HTML/SVG "Cat & Mouse" animation (from a CSS art challenge). Gemini helped me port this into a React component (`CatAnimation.jsx`), isolate the styles to prevent conflicts with the global theme, and position it perfectly in the footer next to the "poweroff" command.
+*   **DevOps:** Gemini assisted in writing the GitHub Actions workflow (`deploy.yml`) to handle a complex monorepo setup, ensuring this project deploys correctly to a subfolder (`/portfolio/`) alongside my main landing page.
+
+## What I'm Most Proud Of
+1.  **The "Data Cleaning Flex"**: Instead of just showing the final result of my projects, I created a specific layout block to highlight the *messy* raw data and the specific logic used to fix it. This tells the real story of data engineering.
+2.  **The Aesthetic**: I love that the site feels like an IDE or Terminal (using JetBrains Mono) but remains warm and inviting due to the "Athens" color theme.
+3.  **The Footer Surprise**: Integrating the interactive "Cat & Mouse" animation in the footer adds a touch of personality and whimsy to an otherwise strict, logical interface. It rewards users who scroll to the end.
